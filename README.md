@@ -20,31 +20,32 @@
 ### Executing program
 
 * How to run the program
-Home Page:
+
+* Home Page:
     1. This page contains only information and it's a static page.
     2. Any user can find company related information on this page.
 
-Service Timesheet Page:
+* Service Timesheet Page:
     1. Logged in employee can fill timesheet on daily basis through this page.
 
-Service Goals Page:
+* Service Goals Page:
     1. Logged in employee can add comments of work to achive goal for their performace check annually.
 
-Service Docs Page:
+* Service Docs Page:
     1. This page contains only files and it's a static page.
     2. Logged in employee can see payslip, resume, compensasion letter, offer letter through this page.
 
-Contact Page:
+* Contact Page:
     1. This page contains only information and it's a static page.
     2. Any user can find conact infromation thhrough this page.
 
-Login Page:
+* Login Page:
     1. on click of login button, system verifies the following validations.
         - username should not be empty.
         - password should not be empty and it should have min length of 8 characters.
     2. on click of sign-up button, user will redirect to register screen.
 
-Registration Page:
+* Registration Page:
     1. on click of login button, system verifies the following validations.
         - Firstname should not be empty.
         - Lastname should not be empty.
