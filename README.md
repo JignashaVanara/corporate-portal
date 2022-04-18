@@ -6,7 +6,7 @@
 ## Getting Started
 
 ### Folder Structure
-    **images - this folder contains all images required for project.
+    __images__ - this folder contains all images required for project.
     **js - this folder contains all javascript files.
     **css - this folder contains all css files.
     **home.html - this is a home page of this website.
