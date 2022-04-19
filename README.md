@@ -1,7 +1,8 @@
 # Pixel Web Company
 
 ## Description
-    Current website is a corporate company portal which is developed using HTML, CSS, JS, Jquery, Bootstrap, Node.js and handlebars.
+    Current website is a corporate company portal which is developed using HTML, CSS, JS, Jquery, 
+    Bootstrap, Node.js and handlebars.
 
 ## Getting Started
 
