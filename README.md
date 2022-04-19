@@ -52,6 +52,9 @@
     cd Project
     
     npm start
+    
+    Use following URL to run project: 
+    http://localhost:3000/
 
 ### About Pages 
 
