@@ -1,25 +1,58 @@
 # Pixel Web Company
 
 ## Description
-    Current website is a corporate company portal which is developed using HTML, CSS, JS, Jquery and Bootstrap.
+    Current website is a corporate company portal which is developed using HTML, CSS, JS, Jquery, Bootstrap, Node.js and handlebars.
 
 ## Getting Started
 
 ### Folder Structure
-    images - this folder contains all images required for project.
-    js - this folder contains all javascript files.
-    css - this folder contains all css files.
-    home.html - this is a home page of this website.
-    service-docs.html - this page contains employee documents data.
-    service-goal.html - this page is for goal setting of employee's performance check annually.
-    service-time.html - Employee can fill timesheet on daily basis using this page of website.
-    contact - this is a contact page of this website.
-    sign-in.html - this is a login/registration html file.
-    README.md - this file contains information regarding project.
-
+    ├── bin
+    │   ├── wwww
+    ├── node_modules
+    ├── public
+    │   ├── css
+    │   │   ├── style.css
+    │   ├── images
+    |   |   ├── svg
+    │   ├── js
+    |   |   ├── script.js
+    |   |   ├── home.js
+    │   ├── contact.html
+    │   ├── home.html
+    │   ├── service-docs.html
+    │   ├── service-goal.html
+    │   ├── service-time.html
+    │   ├── sign-in.html
+    ├── routes
+    │   ├── routes.js
+    ├── src
+    │   ├── User.js
+    ├── views
+    │   ├── partials
+    │   │   ├── header.hbs
+    │   │   ├── footer.hbs
+    │   ├── contact.hbs
+    │   ├── error.hbs
+    │   ├── home.hbs
+    │   ├── layout.hbs
+    │   ├── service-docs.hbs
+    │   ├── service-goal.hbs
+    │   ├── service-time.hbs
+    │   ├── sign-in.hbs
+    │   ├── sign-up.hbs
+    ├── app.js
+    ├── package-lock.json 
+    ├── package.json
+    └── README.md
+     
 ### Executing program
 
-* How to run the program
+    git clone https://github.com/JignashaVanara/Project.git
+    cd Project
+    
+    npm start
+
+### About Pages 
 
 * Home Page:
     1. This page contains only information and it's a static page.

@@ -1,0 +1,43 @@
+<!-- header start -->
+  <header id="header" class="sticky">
+    <nav class="navbar navbar-expand-md">
+      <div class="container">
+        <a class="company-title scrollto" href="home">Pixel Web</a>
+        <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#mobile-nav"
+          aria-controls="mobile-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mobile-nav">
+          <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item dropdown">
+            <li class="nav-item" onclick="aboutScroll()"><a class="nav-link" href="/about" role="button">
+                About
+              </a></li>
+            <a class="nav-link dropdown-toggle" href="#" id="service-dd" role="button" data-bs-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Services
+            </a>
+            <div class="dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="service-dd">
+              <a class="dropdown-item" href="/timesheet">Timesheet Entry</a>
+              <a class="dropdown-item" href="/annual-performance">Goals</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/documents">Documents</a>
+            </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="/contact" role="button">
+                Contact
+              </a></li>
+            <li class="nav-item" onclick="login()"><a class="nav-link" href="/login" role="button">
+                Sign in
+              </a></li>
+            <li class="nav-item"><a class="nav-link" href="/register" onclick="register()" role="button">
+                Sign up
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- header end -->
