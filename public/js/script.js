@@ -103,6 +103,6 @@ function add_comments() {
 }
 
 //about scroll
-function aboutScroll(){
-  document.getElementById('about').scrollIntoView();
-}
+// function aboutScroll(){
+//   document.getElementById('about').scrollIntoView();
+// }
