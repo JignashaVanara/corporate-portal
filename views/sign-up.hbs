@@ -4,7 +4,7 @@
       <div id="login-wrap">
         <div id="register" class="b-reg">
           <h2>Registration</h2>
-          <form method="GET" action="/api/User">
+          <form method="POST" action="/newuser">
             <p class="pwd-msg">Password did not match !!!</p>
             <input type="text" name="firstname" id="firstname" placeholder="First Name" required>
             <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
@@ -12,7 +12,7 @@
             <input type="text" name="username" id="username" placeholder="Username" required>
             <input type="email" name="email" id="email" placeholder="Email" required>
             <input type="password" name="pass" id="pass" minlength="8" placeholder="Password" required>
-            <input type="password" name="confirm-pass" id="confirm-pass" minlength="8" placeholder="Confirm Password"
+            <input type="password" name="confirm_pass" id="confirm-pass" minlength="8" placeholder="Confirm Password"
               onkeyup="checkPass();" required>
             <div class="btns">
               <button class="btn btn-primary" type="submit" value="Register" id="reg-btn">Register</button>
