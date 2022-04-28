@@ -84,11 +84,11 @@ body {
 	background-color: #04121f;
 }
 
-#header .sticky {
+/* .sticky {
 	position: sticky;
 	top: 0;
 	position: -webkit-sticky;
-}
+} */
 
 #header .navbar-toggler {
 	background-color: #fff;
@@ -772,8 +772,9 @@ input {
 
 #footer .footer-top .footer-links ul a:hover {
 	color: #0777da;
-	;
 }
+
+#footer .footer-top .footer-links ul li u:hover { cursor: pointer; color: #0777da; }
 
 #footer .footer-top .footer-contact {
 	margin-bottom: 30px;
