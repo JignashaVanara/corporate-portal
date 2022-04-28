@@ -8,8 +8,9 @@
 
 ### Folder Structure
     ├── bin
-    │   ├── wwww
-    ├── node_modules
+    │   ├── www
+    ├── lib
+    │   ├── db.js
     ├── public
     │   ├── css
     │   │   ├── style.css
@@ -25,22 +26,25 @@
     │   ├── service-time.html
     │   ├── sign-in.html
     ├── routes
+    │   ├── dbroutes.js
     │   ├── routes.js
-    ├── src
-    │   ├── User.js
     ├── views
     │   ├── partials
     │   │   ├── header.hbs
     │   │   ├── footer.hbs
+    │   │   ├── loginHeader.hbs
+    │   │   ├── loginFooter.hbs
     │   ├── contact.hbs
     │   ├── error.hbs
     │   ├── home.hbs
     │   ├── layout.hbs
+    │   ├── loginLayout.hbs
     │   ├── service-docs.hbs
     │   ├── service-goal.hbs
     │   ├── service-time.hbs
     │   ├── sign-in.hbs
     │   ├── sign-up.hbs
+    ├── .gitignore
     ├── app.js
     ├── package-lock.json 
     ├── package.json
@@ -92,6 +96,9 @@
         - password should not be empty and it should have min length of 8 characters.
         - Confirm password should not be empty and it should have min length of 8 characters.
         - Password and Confirm password should have the same values.
+
+* Error Page:
+    1. For any kind of error server will redirect to error page(404-page not found).
 
 ## Help
 (advise for common problems or issues.)
