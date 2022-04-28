@@ -12,21 +12,6 @@ router.get('/', function(req, res, next) {
     } 
 });
 
-router.get('/about', function(req, res, next) {
-    // res.render('home');
-    if (req.session.loggedin == true) {
-        res.render('home', {
-            layout: 'layout'
-        })
-        window.scrollTo(0, 1000)
-    } else {
-        res.render('home', {
-            layout: 'loginLayout'
-        })
-        window.scrollTo(0, 1000)
-    } 
-});
-
 router.get('/annual-performance', function(req, res, next) {
     // res.render('service-goal');
     if (req.session.loggedin == true) {
