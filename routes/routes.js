@@ -138,6 +138,10 @@ router.get('/home', function(req, res, next) {
     } 
 });
 
+router.get('/error', function(req, res, next) {
+    res.render('error', { layout: 'loginLayout' });
+});
+
 router.get('/logout', function (req, res) {
     req.session.destroy();
     res.redirect('/login');
