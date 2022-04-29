@@ -19,31 +19,25 @@
     │   ├── js
     |   |   ├── script.js
     |   |   ├── home.js
-    │   ├── contact.html
-    │   ├── home.html
-    │   ├── service-docs.html
-    │   ├── service-goal.html
-    │   ├── service-time.html
-    │   ├── sign-in.html
     ├── routes
     │   ├── dbroutes.js
     │   ├── routes.js
     ├── views
     │   ├── partials
-    │   │   ├── header.hbs
-    │   │   ├── footer.hbs
-    │   │   ├── loginHeader.hbs
-    │   │   ├── loginFooter.hbs
-    │   ├── contact.hbs
-    │   ├── error.hbs
-    │   ├── home.hbs
-    │   ├── layout.hbs
-    │   ├── loginLayout.hbs
-    │   ├── service-docs.hbs
-    │   ├── service-goal.hbs
-    │   ├── service-time.hbs
-    │   ├── sign-in.hbs
-    │   ├── sign-up.hbs
+    │   │   ├── header.html
+    │   │   ├── footer.html
+    │   │   ├── loginHeader.html
+    │   │   ├── loginFooter.html
+    │   ├── contact.html
+    │   ├── error.html
+    │   ├── home.html
+    │   ├── layout.html
+    │   ├── loginLayout.html
+    │   ├── service-docs.html
+    │   ├── service-goal.html
+    │   ├── service-time.html
+    │   ├── sign-in.html
+    │   ├── sign-up.html
     ├── .gitignore
     ├── app.js
     ├── package-lock.json 

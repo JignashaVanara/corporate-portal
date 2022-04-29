@@ -19,9 +19,7 @@ router.get('/annual-performance', function(req, res, next) {
             layout: 'layout'
         })
     } else {
-        res.render('service-goal', {
-            layout: 'loginLayout'
-        })
+        res.redirect('/login')
     } 
 });
 
@@ -32,9 +30,7 @@ router.get('/timesheet', function(req, res, next) {
             layout: 'layout'
         })
     } else {
-        res.render('service-time', {
-            layout: 'loginLayout'
-        })
+        res.redirect('/login')
     } 
 });
 
@@ -45,9 +41,7 @@ router.get('/documents', function(req, res, next) {
             layout: 'layout'
         })
     } else {
-        res.render('service-docs', {
-            layout: 'loginLayout'
-        })
+        res.redirect('/login');
     } 
 });
 
