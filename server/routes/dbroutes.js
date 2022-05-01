@@ -4,26 +4,25 @@ var connection  = require('../lib/db');
 
 //authenticate user
 router.post('/authentication', function(req, res, next) {
-       
-    var email = req.body.username;
+     
+    var username = req.body.username;
     var pwd = req.body.pass;
-    console.log(email);
-    console.log(pwd);
- 
-        connection.query('SELECT * FROM pixelweb_db.users WHERE email = ? AND password = ?', [email, pwd], function(err, rows, fields) {
-            if(err) throw err
-             
-            // if user not found
-            if (rows.length <= 0) {
-                req.flash('error', 'Please enter correct email and Password!');
-                res.redirect('/login');
-            }
-            else { // if user found
-                req.session.loggedin = true;
-                res.redirect('/home');
- 
-            }            
-        })
+    
+    connection.query('SELECT * FROM pixelweb_db.users WHERE username = ? AND password = ?', [username, pwd], function(err, rows, fields) {
+        if(err) throw err
+            
+        // if user not found
+        if (rows.length <= 0) {
+            req.flash('error', 'Please enter correct username and Password!');
+            res.redirect('/login');
+        }
+        else { // if user found
+            req.session.loggedin = true;
+            res.redirect('/home');
+
+        }            
+    })
+     
 })
 
 //add user
