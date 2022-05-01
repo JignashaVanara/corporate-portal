@@ -4,11 +4,10 @@
       <div id="login-wrap">
         <div id="register" class="b-reg">
           <h2>Registration</h2>
-          <form method="POST" action="/api/newuser">
+          <form method="POST" action="/api/user/adduser">
             <p class="pwd-msg">Password did not match !!!</p>
             <input type="text" name="firstname" id="firstname" placeholder="First Name" required>
             <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
-            <input type="text" id="birthdate" placeholder="Date of birth" onfocus="(this.type='date')" required>
             <input type="text" name="username" id="username" placeholder="Username" required>
             <input type="email" name="email" id="email" placeholder="Email" required>
             <input type="password" name="pass" id="pass" minlength="8" placeholder="Password" required>

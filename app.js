@@ -9,7 +9,8 @@ var expressValidator = require('express-validator');
 var flash = require('express-flash');
 var session = require('express-session');
 var favicon = require('serve-favicon')
-var dbRoutes = require('./server/routes/dbroutes');
+var userRoutes = require('./server/routes/user');
+var sql = require('./server/models/sql');
 
 var app = express();
 
@@ -35,7 +36,8 @@ app.use(flash());
 app.use(expressValidator());
 
 app.use('/', require('./server/routes/routes'));
-app.use('/api', dbRoutes);
+app.use('/api/user', userRoutes);
+sql.createTable();
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

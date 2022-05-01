@@ -146,28 +146,28 @@ body {
 /**** header css end ****/
 
 /**** home slideshow css start ****/
-.slideshow-container {
+#home-carousel .slideshow-container {
 	max-width: 100%;
 	position: relative;
 	margin: auto;
 }
 
-.slideshow-container .slider {
+#home-carousel .slideshow-container .slider {
 	text-align: center;
 	position: relative;
 	top: -40px
 }
 
-.slideshow-container img {
+#home-carousel .slideshow-container img {
 	width: 100%;
 	height: 630px;
 }
 
-.mySlides {
+#home-carousel .mySlides {
 	display: none;
 }
 
-.text {
+#home-carousel .text {
 	position: absolute;
 	bottom: 20%;
 	width: 100%;
@@ -178,7 +178,7 @@ body {
 	padding: 8px 12px;
 }
 
-.dot {
+#home-carousel .dot {
 	height: 15px;
 	width: 15px;
 	background-color: #bbb;
@@ -188,18 +188,18 @@ body {
 	margin: 0 2px;
 }
 
-.active {
-	background-color: #717171;
+#home-carousel .active {
+	background-color: #000 !important;
 }
 
-.fade {
+#home-carousel .fade {
 	animation-name: fade;
 	animation-duration: 1.5s;
 }
 
 @keyframes fade {
 	from {
-		opacity: .4
+		opacity: .6
 	}
 
 	to {
@@ -208,7 +208,7 @@ body {
 }
 
 @media only screen and (max-width: 300px) {
-	.text {
+	#home-carousel .text {
 		font-size: 11px
 	}
 }

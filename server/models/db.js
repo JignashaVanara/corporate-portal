@@ -9,11 +9,12 @@ var connection=mysql.createConnection({
 });
 
 connection.connect(function(error){
-   if(!!error){
-     console.log(error);
-   }else{
-     console.log('Connected...');
-   }
+   if(error) throw error;
+   console.log('Connected...');
+    connection.query("CREATE DATABASE IF NOT EXISTS pixelweb_db", function(err, result){
+    if(err) throw err;
+    console.log("Database Created...");
+    });
  }); 
 
 module.exports = connection; 

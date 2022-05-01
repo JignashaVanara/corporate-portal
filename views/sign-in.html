@@ -7,7 +7,7 @@
           {{#if messages.error}}
             <p style="color:red">{{messages.error}}</p>
           {{/if}}
-          <form method="post" action="/api/authentication">
+          <form method="post" action="/api/user/authentication">
             <input type="text" name="username" id="login-username" placeholder="Username" required><br />
             <input type="password" name="pass" id="login-pass" minlength="8" placeholder="Password" required>
             <div class="btns">

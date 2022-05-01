@@ -19,9 +19,14 @@
     │   ├── js
     |   |   ├── script.js
     |   |   ├── home.js
-    ├── routes
-    │   ├── dbroutes.js
-    │   ├── routes.js
+    │   ├── favicon.ico
+    ├── server
+    |   ├── models
+    |   │   ├── db.js
+    |   │   ├── sql.js
+    |   ├── routes
+    |   │   ├── routes.js
+    |   │   ├── user.js
     ├── views
     │   ├── partials
     │   │   ├── header.html
