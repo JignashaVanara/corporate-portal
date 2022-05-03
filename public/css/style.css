@@ -455,6 +455,14 @@ body {
 	color: red;
 }
 
+.entrymsg{
+	color: green;
+	display: none;
+}
+
+#empid, #emp_name {
+	background-color: #e6e7e9;
+} 
 @media (max-width: 768px) {
 	#timesheet input {
 		margin-left: 0;

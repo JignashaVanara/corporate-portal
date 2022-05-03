@@ -40,10 +40,10 @@ function checkPass() {
   })
 }
 
+//project filter
 $(function () {
   filterObjects('all');
 });
-
 function filterObjects(f) {
   var item, i;
   item = document.getElementsByClassName("project-item");
@@ -53,7 +53,6 @@ function filterObjects(f) {
     if (item[i].className.indexOf(f) > -1) addClass(item[i], "show");
   }
 }
-
 function addClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
@@ -64,7 +63,6 @@ function addClass(element, name) {
     }
   }
 }
-
 function removeClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
@@ -107,44 +105,13 @@ function add_comments() {
 //   document.getElementById('about').scrollIntoView();
 // }
 
-// Dynamically change page title
-
-if (window.location.pathname == '/contact'){
-  document.title = 'Contact | Project Rubric';
-}
-
-if (window.location.pathname == '/login'){
-  document.title = 'Sign in | Project Rubric';
-}
-
-if (window.location.pathname == '/register'){
-  document.title = 'Sign up | Project Rubric';
-}
-
-if (window.location.pathname == '/timesheet'){
-  document.title = 'Timesheet| Project Rubric';
-}
-
-if (window.location.pathname == '/annual-performance'){
-  document.title = 'Goals | Project Rubric';
-}
-
-if (window.location.pathname == '/documents'){
-  document.title = 'Documents | Project Rubric';
-}
-
 // edit profile
-
 function edituserprofile() {
   const endpoint = `/api/user/editempprofile`;
   const fn = document.querySelector('#firstname').value;
   const ln = document.querySelector('#lastname').value;
   const un = document.querySelector('#username').value;
-  const data = {
-    firstname: fn,
-    lastname: ln,
-    username: un
-  }
+  const data = { firstname: fn, lastname: ln, username: un }
   if(fn == '' && ln == '' && un == ''){
     let err = "No changes made";
     let el = document.querySelector("#editprofile p.error");
@@ -171,6 +138,7 @@ function editreturn(){
   window.location.href = '/home';
 }
 
+//delete account
 function deleteAccount() {
   if(confirm('Are you sure you want to delete your account?')) {
     const endpoint = `/api/user/deleteaccount`;
@@ -183,4 +151,38 @@ function deleteAccount() {
       console.error('Error:', error);
     });
   }
+}
+
+//timesheet entry
+function fillTimesheet(){
+  const endpoint = `/api/timesheet/addefforts`;
+  const day = document.querySelector('#working_day').value;
+  const efforts = document.querySelector('#efforts').value;
+  const comment = document.querySelector('#timeentry_comment').value;
+  const data = { day: day, efforts: efforts, comment: comment}
+
+  fetch(endpoint, {
+    method:'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data),
+  })
+  .then((res) => res.json())
+  .then((data) => {
+    // window.location.href = data.redirect
+    let msg = document.querySelector('.entrymsg');
+    msg.style.display= 'flex';
+    msg.innerHTML = '<p>' + data.message + '</p>';
+    document.querySelector('#working_day').value = ''; 
+    document.querySelector('#efforts').value = ''; 
+    document.querySelector('#timeentry_comment').value=''    
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+}
+
+function logmsg(){
+  document.querySelector('.entrymsg').style.display = 'none';
 }

@@ -7,12 +7,13 @@
           <hr>
         </div>
       </div>
+      <div class="row"><div class="col-lg-12 entrymsg"></div></div>
       <div class="row">
         <div class="col-lg-3 col-xs-12">
           <label for="empid">Employee ID<sup>*</sup>:</label>
         </div>
         <div class="col-lg-9 col-xs-12">
-          <input type="text" id="empid" name="empid" required><br>
+          <input type="text" id="empid" value={{empid}} name="empid" disabled><br>  
         </div>
       </div>
       <div class="row">
@@ -20,7 +21,7 @@
           <label for="emp-name">Employee Name<sup>*</sup>:</label>
         </div>
         <div class="col-lg-9 col-xs-12">
-          <input type="text" id="emp-name" name="emp-name" required><br>
+          <input type="text" id="emp_name" value={{ename}} name="emp-name" disabled><br>
         </div>
       </div>
       <div class="row">
@@ -28,7 +29,7 @@
           <label for="working-day">Select Day<sup>*</sup>:</label>
         </div>
         <div class="col-lg-9 col-xs-12">
-          <input type="date" id="working-day" name="working-day" required><br>
+          <input type="date" id="working_day" name="working-day" onfocus="logmsg()" required><br>
         </div>
       </div>
       <div class="row">
@@ -36,7 +37,7 @@
           <label for="efforts">Efforts<sup>*</sup>:</label>
         </div>
         <div class="col-lg-9 col-xs-12">
-          <input type="text" id="efforts" name="efforts" placeholder="hh:mm" required><br>
+          <input type="text" id="efforts" name="efforts" placeholder="hh:mm" onfocus="logmsg()" required><br>
         </div>
       </div>
       <div class="row">
@@ -44,7 +45,7 @@
           <label for="comments">Additional Comments(optional)</label>
         </div>
         <div class="col-lg-9 col-xs-12">
-          <textarea id="timeentry-comment" rows="4" cols="50" placeholder="Add Comment"></textarea>
+          <textarea id="timeentry_comment" rows="4" cols="50" placeholder="Add Comment" onfocus="logmsg()"></textarea>
         </div>
       </div>
       <div class="row">
@@ -52,7 +53,7 @@
         </div>
         <div class="col-lg-9 col-xs-12">
           <br>
-          <a href="/api/timesheet/addefforts"><button class="btn btn-primary" type="submit" id="time-entry">Submit</button></a>
+          <button class="btn btn-primary" type="submit" id="time-entry" onclick="fillTimesheet()">Submit</button>
         </div>
       </div>
     </div>

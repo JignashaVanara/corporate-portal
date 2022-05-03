@@ -25,7 +25,9 @@ router.get('/annual-performance', function(req, res, next) {
 router.get('/timesheet', function(req, res, next) {
     if (req.session.loggedin == true) {
         res.render('service-time', {
-            layout: 'layout'
+            layout: 'layout',
+            empid: req.session.empid,
+            ename: req.session.firstname
         })
     } else {
         res.redirect('/login')
