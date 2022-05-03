@@ -4,7 +4,7 @@
   "private": true,
   "description": "",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "author": "Jignasha Vanara",
   "dependencies": {

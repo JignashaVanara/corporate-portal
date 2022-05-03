@@ -573,7 +573,8 @@ body {
 }
 
 #login,
-#register {
+#register, 
+#editprofile {
 	width: 30%;
 	display: flex;
 	flex-direction: column;
@@ -592,11 +593,11 @@ body {
 }
 
 #login h2,
-#register h2 {
+#register h2, #editprofile h2 {
 	padding-bottom: 50px;
 }
 
-.pwd-msg {
+.pwd-msg, #editprofile p.error {
 	color: red;
 	text-align: center;
 	display: none;

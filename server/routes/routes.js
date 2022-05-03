@@ -1,4 +1,4 @@
-var router = require('express').Router();
+const router = require('express').Router();
 
 router.get('/', function(req, res, next) {
     if (req.session.loggedin == true) {
@@ -13,7 +13,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/annual-performance', function(req, res, next) {
-    // res.render('service-goal');
     if (req.session.loggedin == true) {
         res.render('service-goal', {
             layout: 'layout'
@@ -24,7 +23,6 @@ router.get('/annual-performance', function(req, res, next) {
 });
 
 router.get('/timesheet', function(req, res, next) {
-    // res.render('service-time');
     if (req.session.loggedin == true) {
         res.render('service-time', {
             layout: 'layout'
@@ -35,7 +33,6 @@ router.get('/timesheet', function(req, res, next) {
 });
 
 router.get('/documents', function(req, res, next) {
-    // res.render('service-docs');
     if (req.session.loggedin == true) {
         res.render('service-docs', {
             layout: 'layout'
@@ -46,7 +43,6 @@ router.get('/documents', function(req, res, next) {
 });
 
 router.get('/contact', function(req, res, next) {
-    // res.render('contact');
     if (req.session.loggedin == true) {
         res.render('contact', {
             layout: 'layout'
@@ -74,6 +70,22 @@ router.get('/home', function(req, res, next) {
     } 
 });
 
+router.get('/editprofile', function(req, res, next) {
+    if (req.session.loggedin) {
+        let username = req.session.username;
+        let firstname = req.session.firstname;
+        let lastname = req.session.lastname;
+        res.render('editprofile', {
+            layout: 'layout',
+            fname: firstname,
+            lname: lastname,
+            uname: username
+    })
+    } else {
+        res.redirect('/login');
+    }   
+});
+
 router.get('/error', function(req, res, next) {
     res.render('error', { layout: 'loginLayout' });
 });
@@ -86,5 +98,7 @@ router.get('/logout', function (req, res) {
 router.get('/register', function(req, res, next) {
     res.render('sign-up', { layout: 'loginLayout' });
 });
+
+
 
 module.exports = router;

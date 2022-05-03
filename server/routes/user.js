@@ -1,11 +1,11 @@
-var router = require('express').Router();
-var connection  = require('../models/db');
+const router = require('express').Router();
+const connection  = require('../models/db');
 
 //authenticate user
 router.post('/authentication', function(req, res, next) {
      
-    var username = req.body.username;
-    var pwd = req.body.pass;
+    let username = req.body.username;
+    let pwd = req.body.pass;
     
     connection.query('SELECT * FROM pixelweb_db.employee WHERE username = ? AND password = ?', [username, pwd], function(err, rows, fields) {
         if(err) throw err
@@ -17,6 +17,10 @@ router.post('/authentication', function(req, res, next) {
         }
         else { // if user found
             req.session.loggedin = true;
+            req.session.username = username;  
+            req.session.firstname = rows[0].firstname;
+            req.session.lastname = rows[0].lastname;
+            req.session.empid = rows[0].empid;
             res.redirect('/home');
         }  
     })
@@ -26,18 +30,43 @@ router.post('/authentication', function(req, res, next) {
 router.post('/adduser', function(req, res, next) {
        
     console.log(req.body);
-    var firstname = req.body.firstname;
-    var lastname = req.body.lastname;
-    var username = req.body.username;
-    var email = req.body.email;
-    var pass = req.body.pass;
-    var confirm_pass = req.body.confirm_pass;
+    let firstname = req.body.firstname;
+    let lastname = req.body.lastname;
+    let username = req.body.username;
+    let email = req.body.email;
+    let pass = req.body.pass;
+    let confirm_pass = req.body.confirm_pass;
  
         connection.query('INSERT INTO `pixelweb_db`.`employee` (`firstname`, `lastname`, `username`, `email`, `password`, `confirm_password`) VALUES ( ?, ?, ?, ?, ?, ?)', [firstname, lastname, username, email, pass, confirm_pass], function(err, rows, fields) {
             if(err) throw err
-             
             req.flash('registration', 'User registered successfully.');
             res.redirect('/login');         
+        })
+})
+
+//update emp profile
+router.put('/editempprofile', function(req, res, next) {
+    console.log('inside edit profile route....');
+    let firstname = req.body.firstname;
+    let lastname = req.body.lastname;
+    let username = req.body.username;
+    let empid = req.session.empid;
+    if(firstname == '') firstname = req.session.firstname;
+    if(lastname == '') lastname = req.session.lastname;
+    if(username == '') username = req.session.username;
+    connection.query('UPDATE `pixelweb_db`.`employee` SET firstname = ?, lastname = ?, username = ? WHERE empid = ?', [firstname, lastname, username, empid], function(err, rows, fields) {
+        if(err) throw err    
+        res.json({ redirect: '/login'})
+    })
+})
+
+//delete emp account
+router.delete('/deleteaccount', function(req, res, next) {
+    console.log('inside delete route....');
+    let empid = req.session.empid;     
+        connection.query('DELETE FROM `pixelweb_db`.`employee` WHERE empid = ?', [empid], function(err, rows, fields) {
+            if(err) throw err    
+            res.json({ redirect: '/login'})
         })
 })
 

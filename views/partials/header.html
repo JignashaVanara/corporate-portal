@@ -34,9 +34,26 @@
             <li class="nav-item"><a class="nav-link" href="/register" onclick="register()" role="button">
                 Sign up
               </a></li> -->
-              <li class="nav-item"><a class="nav-link" href="/logout" role="button">
+              <li class="nav-item dropdown">
+                <!-- <li class="nav-item"><a class="nav-link" href="/about" onclick="aboutScroll()" role="button">
+                    About
+                  </a></li> -->
+                <a class="nav-link dropdown-toggle" href="#" id="service-dd" role="button" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="service-dd">
+                  <a class="dropdown-item" href="/editprofile">Edit Profile</a>
+                  <a class="dropdown-item" onclick="deleteAccount()">Delete Account</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/logout" role="button">
+                    Sign out
+                  </a>
+                </div>
+                </li>
+              <!-- <li class="nav-item"><a class="nav-link" href="/logout" role="button">
                 Sign out
-              </a></li>
+              </a></li> -->
           </ul>
         </div>
       </div>

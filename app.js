@@ -10,6 +10,9 @@ var flash = require('express-flash');
 var session = require('express-session');
 var favicon = require('serve-favicon')
 var userRoutes = require('./server/routes/user');
+var serviceTimesheetRoutes = require('./server/routes/timesheet');
+var serviceGoalsRoutes = require('./server/routes/goals');
+var serviceDocsRoutes = require('./server/routes/documents');
 var sql = require('./server/models/sql');
 
 var app = express();
@@ -35,8 +38,19 @@ app.use(session({ cookie: { maxAge: 60000 },
 app.use(flash());
 app.use(expressValidator());
 
+//CORS middleware
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");  
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");  
+  next();
+});
+
 app.use('/', require('./server/routes/routes'));
 app.use('/api/user', userRoutes);
+app.use('/api/timesheet', serviceTimesheetRoutes);
+app.use('/api/goal', serviceGoalsRoutes);
+app.use('/api/docs', serviceDocsRoutes);
 sql.createTable();
 
 // catch 404 and forward to error handler

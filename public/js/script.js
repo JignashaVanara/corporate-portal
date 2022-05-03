@@ -132,3 +132,55 @@ if (window.location.pathname == '/annual-performance'){
 if (window.location.pathname == '/documents'){
   document.title = 'Documents | Project Rubric';
 }
+
+// edit profile
+
+function edituserprofile() {
+  const endpoint = `/api/user/editempprofile`;
+  const fn = document.querySelector('#firstname').value;
+  const ln = document.querySelector('#lastname').value;
+  const un = document.querySelector('#username').value;
+  const data = {
+    firstname: fn,
+    lastname: ln,
+    username: un
+  }
+  if(fn == '' && ln == '' && un == ''){
+    let err = "No changes made";
+    let el = document.querySelector("#editprofile p.error");
+    el.style.display = 'block';
+    el.innerHTML = err;
+  } else {
+    fetch(endpoint, {
+      method:'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data),
+    })
+    .then((res) => res.json())
+    .then((data) => 
+      window.location.href = data.redirect
+    )
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
+}
+function editreturn(){
+  window.location.href = '/home';
+}
+
+function deleteAccount() {
+  if(confirm('Are you sure you want to delete your account?')) {
+    const endpoint = `/api/user/deleteaccount`;
+    fetch(endpoint, {
+      method:'DELETE'
+    })
+    .then((res) => res.json())
+    .then((data) => window.location.href = data.redirect)
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
+}
