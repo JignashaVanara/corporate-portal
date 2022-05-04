@@ -45,7 +45,12 @@ async function createTable() {
       )`);
 
     // let docsTable = await connection.query(``);
-    
+
+}
+
+async function docsData() {
+
+  let sql = await connection.query();
 }
 
 module.exports = { createTable }
