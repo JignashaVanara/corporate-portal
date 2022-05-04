@@ -8,21 +8,51 @@
           <div class="coment-bottom bg-white p-2 px-4">
             <div class="flex-row add-comment-section mt-4 mb-4">
               <h3><u>Goals:</u></h3><br>
-              <ul>
+              <!-- <ul>
                 <li>Number of reusable components developed</li>
                 <li>post project delivery bug ratio</li>
                 <li>Certification</li>
                 <li>Trainings attended</li>
                 <li>number of leaves taken</li>
                 <li>customer appreciations(if any)</li>
-              </ul>
+              </ul> -->
+              <select name="Goals" id="goaltype" size="1" style="padding: 10px;border: 1px solid #ced4da;margin-bottom: 20px;">
+                <option value="" selected="selected">-- Select Type --</option>
+                <!-- <option value="t1">Project Goals</option>
+                <option value="t2">Attributes</option> -->
+              </select>
+              <br>
+              <select name="Goals" id="goalname" size="1" style="padding: 10px;border: 1px solid #ced4da;margin-bottom: 20px;">
+                <option value="" selected="selected">-- Select Name --</option>
+                <!-- <option value="1">Number of reusable components developed</option>
+                <option value="2">post project delivery bug ratio</option>
+                <option value="3">Certification</option>
+                <option value="4">Trainings attended</option>
+                <option value="5">number of leaves taken</option>
+                <option value="6">customer appreciations(if any)</option> -->
+              </select>
               <br>
               <textarea id="goal-comment" rows="4" cols="50" class="form-control mr-3"
                 placeholder="Add comment"></textarea><br>
               <button class="btn btn-primary" type="button" id="goal-btn"
-                onclick="add_comments(this.id);">Comment</button>
+                onclick="add_comments()">Comment</button>
             </div>
-            <div class="commented-section mt-2" id="goal-data"></div>
+            <div class="commented-section mt-2" id="goal-data">
+              {{#each data}}
+              <hr>
+              <div class='d-flex flex-row align-items-center commented-user'>
+                <h5 class='mr-2'>{{this.empName}}</h5> &nbsp;
+                <span class='dot mb-1'></span> &nbsp;
+                <span class='mb-1 ml-2'>{{this.createdAt}}</span>
+              </div>
+              <p>{{this.goalType}} &nbsp;
+                <span class='dot mb-1'></span> &nbsp;
+                {{this.goalName}}
+              </p>
+              {{this.comments}}
+              <br/>
+              {{/each}}
+            </div>
           </div>
         </div>
       </div>

@@ -10,11 +10,10 @@ router.post('/addefforts', function(req, res, next) {
     let efforts = req.body.efforts;
     let comment = req.body.comment;
  
-    console.log(day);
-        connection.query('INSERT INTO `pixelweb_db`.`timesheet` (`empId`, `empName`, `day`, `efforts`, `comments`) VALUES ( ?, ?, ?, ?, ?)', [empid, ename, day, efforts, comment], function(err, rows, fields) {
-            if(err) throw err
-            res.json({ redirect: '/timesheet', message: 'Efforts logged successfully.'})       
-        })
+    connection.query('INSERT INTO `pixelweb_db`.`timesheet` (`empId`, `empName`, `day`, `efforts`, `comments`) VALUES ( ?, ?, ?, ?, ?)', [empid, ename, day, efforts, comment], function(err, rows, fields) {
+        if(err) throw err
+        res.json({ redirect: '/timesheet', message: 'Efforts logged successfully.'})       
+    })
 })
 
 module.exports = router;

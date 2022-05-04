@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const connection  = require('../models/db');
 
 router.get('/', function(req, res, next) {
     if (req.session.loggedin == true) {
@@ -14,9 +15,14 @@ router.get('/', function(req, res, next) {
 
 router.get('/annual-performance', function(req, res, next) {
     if (req.session.loggedin == true) {
-        res.render('service-goal', {
-            layout: 'layout'
-        })
+        connection.query('SELECT * FROM `pixelweb_db`.`goals`', function(err, rows, fields) {
+            if(err) throw err    
+            console.log(rows);
+            res.render('service-goal', {
+                layout: 'layout',
+                data: rows
+            })
+        })  
     } else {
         res.redirect('/login')
     } 

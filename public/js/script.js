@@ -40,71 +40,6 @@ function checkPass() {
   })
 }
 
-//project filter
-$(function () {
-  filterObjects('all');
-});
-function filterObjects(f) {
-  var item, i;
-  item = document.getElementsByClassName("project-item");
-  if (f == "all") f = "";
-  for (i = 0; i < item.length; i++) {
-    removeClass(item[i], "show");
-    if (item[i].className.indexOf(f) > -1) addClass(item[i], "show");
-  }
-}
-function addClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
-      element.className += " " + arr2[i];
-    }
-  }
-}
-function removeClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
-    }
-  }
-  element.className = arr1.join(" ");
-}
-
-// Goals 
-var data = Array();
-var i = 0;
-
-function add_comments() {
-  var today = new Date();
-  var date = (today.getMonth() + 1) + '-' + today.getDate() + '-' + today.getFullYear();
-  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  var dateTime = date + ' ' + time;
-  var val = $('#goal-comment').val();
-
-  if (val !== '') {
-    data[i] = $('#goal-comment').val();
-    i++;
-    document.getElementById("goal-comment").value = "";
-
-    var html = "<hr/>";
-    for (var j = 0; j < data.length; j++) {
-      html += "<div class='d-flex flex-row align-items-center commented-user'><h5 class='mr-2'>Employee Name</h5><span class='dot mb-1'></span><span class='mb-1 ml-2'>" + dateTime + "</span></div>" + data[j] + "<br/>";
-    }
-    document.getElementById("goal-data").innerHTML = html;
-
-  }
-}
-
-//about scroll
-// function aboutScroll(){
-//   document.getElementById('about').scrollIntoView();
-// }
-
 // edit profile
 function edituserprofile() {
   const endpoint = `/api/user/editempprofile`;
@@ -153,6 +88,46 @@ function deleteAccount() {
   }
 }
 
+//project filter
+$(function () {
+  filterObjects('all');
+});
+function filterObjects(f) {
+  var item, i;
+  item = document.getElementsByClassName("project-item");
+  if (f == "all") f = "";
+  for (i = 0; i < item.length; i++) {
+    removeClass(item[i], "show");
+    if (item[i].className.indexOf(f) > -1) addClass(item[i], "show");
+  }
+}
+function addClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+function removeClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+//about scroll
+// function aboutScroll(){
+//   document.getElementById('about').scrollIntoView();
+// }
+
 //timesheet entry
 function fillTimesheet(){
   const endpoint = `/api/timesheet/addefforts`;
@@ -185,4 +160,65 @@ function fillTimesheet(){
 
 function logmsg(){
   document.querySelector('.entrymsg').style.display = 'none';
+}
+
+// Goals 
+
+var goalInfo = {
+	"Project Goals": [
+    "Number of reusable components developed",
+    "Post project delivery bug ratio",
+    "Certification",
+    "Trainings attended",
+    "Number of leaves taken",
+    "Customer appreciations(if any)"
+  ],
+	"Attributes": [ 
+    "Communication", 
+    "Team Work",
+    "Leadership",
+    "Problem-solving abilities"
+  ]
+}
+
+window.onload = function () {
+	var type = document.getElementById("goaltype");
+	var name = document.getElementById("goalname");	
+
+	for (var gt in goalInfo) {
+		type.options[type.options.length] = new Option(gt, gt);
+	}
+
+	type.onchange = function () { 
+    name.length = 1;  
+		 if (this.selectedIndex < 1)
+			 return; 
+		 var gn = goalInfo[this.value];
+     for (var i = 0; i < gn.length; i++) {
+			name.options[name.options.length] = new Option(gn[i], gn[i]);
+		  }
+	}
+}
+
+function add_comments() {
+  const endpoint = `/api/goal/addcomments`;
+  const goaltype = document.querySelector('#goaltype').value;
+  const goalname = document.querySelector('#goalname').value;
+  const comment = document.querySelector('#goal-comment').value;
+  const data = { goaltype: goaltype, goalname: goalname, comment: comment}
+
+  fetch(endpoint, {
+    method:'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data),
+  })
+  .then((res) => res.json())
+  .then((data) => {
+    window.location.href = data.redirect   
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
 }
