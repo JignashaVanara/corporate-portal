@@ -17,7 +17,7 @@ router.get('/annual-performance', function(req, res, next) {
     if (req.session.loggedin == true) {
         connection.query('SELECT * FROM `pixelweb_db`.`goals`', function(err, rows, fields) {
             if(err) throw err    
-            console.log(rows);
+
             res.render('service-goal', {
                 layout: 'layout',
                 data: rows
@@ -42,9 +42,21 @@ router.get('/timesheet', function(req, res, next) {
 
 router.get('/documents', function(req, res, next) {
     if (req.session.loggedin == true) {
-        res.render('service-docs', {
-            layout: 'layout'
-        })
+        connection.query('SELECT * FROM `pixelweb_db`.`documents`',function(err, rows, fields) {
+            if(err) throw err    
+            const payslipData = rows.filter(row => row && row.docType && row.docType === "PaySlips");
+            const resumeData = rows.filter(row => row && row.docType && row.docType === "Resume");
+            const offerLetterData = rows.filter(row => row && row.docType && row.docType === "OfferLetter");
+            const acrData = rows.filter(row => row && row.docType && row.docType === "AnnualCompensation");
+
+            res.render('service-docs', {
+                layout: 'layout',
+                odata: offerLetterData,
+                pdata: payslipData,
+                rdata: resumeData,
+                acdata: acrData
+            }) 
+        })     
     } else {
         res.redirect('/login');
     } 
@@ -106,7 +118,5 @@ router.get('/logout', function (req, res) {
 router.get('/register', function(req, res, next) {
     res.render('sign-up', { layout: 'loginLayout' });
 });
-
-
 
 module.exports = router;

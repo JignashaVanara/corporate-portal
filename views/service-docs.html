@@ -1,43 +1,76 @@
 <!-- service docs section start -->
-  <section id="service-docs">
-    <div class="container">
-      <h1 style="text-align: center;">Documents</h1>
-      <hr>
-      <div class="row doc-sec">
-        <div class="doc-info offer-letter">
-          <h4><u>Offer Letter</u></h4><br>
-          <a href="#"> Offer Letter
-            <img src="images/svg/file-pdf-solid.svg" alt="PDF ICON" />
-          </a>
-        </div>
-        <div class="doc-info compensation">
-          <h4><u>Annual Compensation</u></h4><br>
-          <a href="#"> FY 2021-2022
-            <img src="images/svg/file-pdf-solid.svg" alt="PDF ICON" />
-          </a>
-        </div>
-        <div class="doc-info payslips">
-          <h4><u>Pay Slips</u></h4><br>
-          <a href="#"> Mar 2022
-            <img src="images/svg/file-pdf-solid.svg" alt="PDF ICON" />
-          </a>
-          <br><br>
-          <a href="#"> Apr 2022
-            <img src="images/svg/file-pdf-solid.svg" alt="PDF ICON" />
-          </a>
-          <br><br>
-          <a href="#"> May 2022
-            <img src="images/svg/file-pdf-solid.svg" alt="PDF ICON" />
+<section id="service-docs">
+  <div class="container">
+    <h1 style="text-align: center;">Documents</h1>
+    <hr>
+    <div class="row doc-sec">
+      <div class="doc-info">
+        <form action="/api/docs/fileupload" enctype="multipart/form-data" method="post">
+          <select name="empdocs" id="doctype" size="1">
+            <option value="" selected="selected">Select document type</option>
+            <option value="PaySlips">Pay Slips</option>
+            <option value="Resume">Resume</option>
+            <option value="OfferLetter">Offer Letter</option>
+            <option value="AnnualCompensation">Annual Compensation</option>
+          </select>
+          <input type="month" id="getpayslip" name="my" />
+          <input type="file" id="sd_file" name="file">
+          <button class="btn btn-primary" type="submit" id="docbutton" value="Upload">Upload</button>
+        </form>
+      </div>
+      <div class="doc-info payslips">
+        <h4><u>Pay Slips</u></h4><br>
+        {{#if pdata}}
+          {{#each pdata}}
+          <a href={{this.fileURL}}> Payslip - {{this.month}}, {{this.year}}
+            <img src={{this.fileIcon}} alt="File ICON" />
           </a>
           <br><br>
-        </div>
-        <div class="doc-info resume">
-          <h4><u>Resume</u></h4><br>
-          <a href="#">Resume
-            <img src="images/svg/file-word-solid.svg" alt="WORD ICON" />
+          {{/each}}
+        {{else}}
+          <p> No documents available</p>
+        {{/if}}
+      </div>
+      <div class="doc-info resume">
+        <h4><u>Resume</u></h4><br>
+        {{#if rdata}}
+          {{#each rdata}}
+          <a href={{this.fileURL}}>{{this.empName}} - Resume
+            <img src={{this.fileIcon}} alt="File ICON" />
           </a>
-        </div>
+          <br><br>
+          {{/each}}
+        {{else}}
+          <p> No documents available</p>
+        {{/if}}
+      </div>
+      <div class="doc-info offer-letter">
+        <h4><u>Offer Letter</u></h4><br>
+        {{#if odata}}
+          {{#each odata}}
+          <a href={{this.fileURL}}> {{this.empName}} - Offer Letter
+            <img src={{this.fileIcon}} alt="File ICON" />
+          </a>
+          <br><br>
+          {{/each}}
+        {{else}}
+          <p> No documents available</p>
+        {{/if}}
+      </div>
+      <div class="doc-info compensation">
+        <h4><u>Annual Compensation</u></h4><br>
+        {{#if acdata}}
+          {{#each acdata}}
+          <a href={{this.fileURL}}> FY {{this.year}} - {{this.name}} Compensation
+            <img src={{this.fileIcon}} alt="File ICON" />
+          </a>
+          <br><br>
+          {{/each}}
+        {{else}}
+          <p> No documents available</p>
+        {{/if}}
       </div>
     </div>
-  </section>
-  <!-- service docs section end -->
+  </div>
+</section>
+<!-- service docs section end -->

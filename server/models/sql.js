@@ -44,8 +44,24 @@ async function createTable() {
               ON UPDATE CASCADE 
       )`);
 
-    // let docsTable = await connection.query(``);
-
+    let docsTable = await connection.query(
+      `CREATE TABLE pixelweb_db.documents (
+        docId int NOT NULL AUTO_INCREMENT,
+        empId int NOT NULL,
+        empName varchar(30) NOT NULL,
+        docType varchar(20) NOT NULL,
+        fileURL varchar(50) NOT NULL,
+        fileIcon varchar(50),
+        month varchar(10),
+        year varchar(4),
+        uploadedAt date NOT NULL,
+        PRIMARY KEY (docId),
+        FOREIGN KEY (empId)
+              REFERENCES pixelweb_db.employee(empid)
+              ON DELETE CASCADE 
+              ON UPDATE CASCADE 
+      )`);
+      
 }
 
 async function docsData() {

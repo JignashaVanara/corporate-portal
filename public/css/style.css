@@ -436,6 +436,14 @@ body {
 }
 
 #timesheet input {
+	height: 40px;
+	border-radius: 10px;
+	border: 1px solid #000;
+	outline: none;
+	text-align: center;
+	font-size: 18px;
+	background-color: #fff;
+	margin: 0 30px 10px 30px;
 	margin-left: 0;
 	width: 500px;
 	border: 1px solid #ced4da;
@@ -552,6 +560,23 @@ body {
 	justify-content: center;
 	padding: 20px;
 }
+#sd_file, #docbutton, #getpayslip {
+	margin-bottom: 20px;
+	/* margin-left:122px; */
+}
+
+#docbutton {
+	background-color: #04121f;
+	border: 1px solid #04121f;
+	color: #fff;
+	width: 100px;
+}
+
+#goaltype, #doctype, #getpayslip { 
+	padding: 10px;
+	border: 1px solid #ced4da;
+	margin-bottom: 20px;
+}
 
 /**** docs css end ****/
 
@@ -618,7 +643,7 @@ form {
 
 }
 
-input {
+#lr-sec input{
 	height: 40px;
 	border-radius: 10px;
 	border: 1px solid #000;
