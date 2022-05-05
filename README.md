@@ -55,15 +55,20 @@
 ### Executing program
 
     1. git clone https://github.com/JignashaVanara/Project.git
+    
     2. cd Project
+    
     3. set following config variables in your environment file to connect your local MySQL DB.
         MYSQL_HOST
         MYSQL_PORT
         MYSQL_USER
         MYSQL_PASSWORD
         MYSQL_DB
+        
     4. npm install
+    
     5. npm start
+    
     6. Use following URL to run project: 
        http://localhost:3000/
 
