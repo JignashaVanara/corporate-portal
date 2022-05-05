@@ -47,44 +47,44 @@ function edituserprofile() {
   const ln = document.querySelector('#lastname').value;
   const un = document.querySelector('#username').value;
   const data = { firstname: fn, lastname: ln, username: un }
-  if(fn == '' && ln == '' && un == ''){
+  if (fn == '' && ln == '' && un == '') {
     let err = "No changes made";
     let el = document.querySelector("#editprofile p.error");
     el.style.display = 'block';
     el.innerHTML = err;
   } else {
     fetch(endpoint, {
-      method:'PUT',
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data),
     })
-    .then((res) => res.json())
-    .then((data) => 
-      window.location.href = data.redirect
-    )
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+      .then((res) => res.json())
+      .then((data) =>
+        window.location.href = data.redirect
+      )
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   }
 }
-function editreturn(){
+function editreturn() {
   window.location.href = '/home';
 }
 
 //delete account
 function deleteAccount() {
-  if(confirm('Are you sure you want to delete your account?')) {
+  if (confirm('Are you sure you want to delete your account?')) {
     const endpoint = `/api/user/deleteaccount`;
     fetch(endpoint, {
-      method:'DELETE'
+      method: 'DELETE'
     })
-    .then((res) => res.json())
-    .then((data) => window.location.href = data.redirect)
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+      .then((res) => res.json())
+      .then((data) => window.location.href = data.redirect)
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   }
 }
 
@@ -129,43 +129,43 @@ function removeClass(element, name) {
 // }
 
 //timesheet entry
-function fillTimesheet(){
+function fillTimesheet() {
   const endpoint = `/api/timesheet/addefforts`;
   const day = document.querySelector('#working_day').value;
   const efforts = document.querySelector('#efforts').value;
   const comment = document.querySelector('#timeentry_comment').value;
-  const data = { day: day, efforts: efforts, comment: comment}
+  const data = { day: day, efforts: efforts, comment: comment }
 
   fetch(endpoint, {
-    method:'POST',
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(data),
   })
-  .then((res) => res.json())
-  .then((data) => {
-    // window.location.href = data.redirect
-    let msg = document.querySelector('.entrymsg');
-    msg.style.display= 'flex';
-    msg.innerHTML = '<p>' + data.message + '</p>';
-    document.querySelector('#working_day').value = ''; 
-    document.querySelector('#efforts').value = ''; 
-    document.querySelector('#timeentry_comment').value=''    
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
+    .then((res) => res.json())
+    .then((data) => {
+      // window.location.href = data.redirect
+      let msg = document.querySelector('.entrymsg');
+      msg.style.display = 'flex';
+      msg.innerHTML = '<p>' + data.message + '</p>';
+      document.querySelector('#working_day').value = '';
+      document.querySelector('#efforts').value = '';
+      document.querySelector('#timeentry_comment').value = ''
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 }
 
-function logmsg(){
+function logmsg() {
   document.querySelector('.entrymsg').style.display = 'none';
 }
 
 // Goals 
 
 var goalInfo = {
-	"Project Goals": [
+  "Project Goals": [
     "Number of reusable components developed",
     "Post project delivery bug ratio",
     "Certification",
@@ -173,8 +173,8 @@ var goalInfo = {
     "Number of leaves taken",
     "Customer appreciations(if any)"
   ],
-	"Attributes": [ 
-    "Communication", 
+  "Attributes": [
+    "Communication",
     "Team Work",
     "Leadership",
     "Problem-solving abilities"
@@ -182,22 +182,22 @@ var goalInfo = {
 }
 
 window.onload = function () {
-	var type = document.getElementById("goaltype");
-	var name = document.getElementById("goalname");	
+  var type = document.getElementById("goaltype");
+  var name = document.getElementById("goalname");
 
-	for (var gt in goalInfo) {
-		type.options[type.options.length] = new Option(gt, gt);
-	}
+  for (var gt in goalInfo) {
+    type.options[type.options.length] = new Option(gt, gt);
+  }
 
-	type.onchange = function () { 
-    name.length = 1;  
-		 if (this.selectedIndex < 1)
-			 return; 
-		 var gn = goalInfo[this.value];
-     for (var i = 0; i < gn.length; i++) {
-			name.options[name.options.length] = new Option(gn[i], gn[i]);
-		  }
-	}
+  type.onchange = function () {
+    name.length = 1;
+    if (this.selectedIndex < 1)
+      return;
+    var gn = goalInfo[this.value];
+    for (var i = 0; i < gn.length; i++) {
+      name.options[name.options.length] = new Option(gn[i], gn[i]);
+    }
+  }
 }
 
 function add_comments() {
@@ -205,20 +205,20 @@ function add_comments() {
   const goaltype = document.querySelector('#goaltype').value;
   const goalname = document.querySelector('#goalname').value;
   const comment = document.querySelector('#goal-comment').value;
-  const data = { goaltype: goaltype, goalname: goalname, comment: comment}
+  const data = { goaltype: goaltype, goalname: goalname, comment: comment }
 
   fetch(endpoint, {
-    method:'POST',
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(data),
   })
-  .then((res) => res.json())
-  .then((data) => {
-    window.location.href = data.redirect   
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
+    .then((res) => res.json())
+    .then((data) => {
+      window.location.href = data.redirect
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 }

@@ -21,53 +21,53 @@
       <div class="doc-info payslips">
         <h4><u>Pay Slips</u></h4><br>
         {{#if pdata}}
-          {{#each pdata}}
-          <a href={{this.fileURL}}> Payslip - {{this.month}}, {{this.year}}
-            <img src={{this.fileIcon}} alt="File ICON" />
-          </a>
-          <br><br>
-          {{/each}}
+        {{#each pdata}}
+        <a href={{this.fileURL}}> Payslip - {{this.month}}, {{this.year}}
+          <img src={{this.fileIcon}} alt="File ICON" />
+        </a>
+        <br><br>
+        {{/each}}
         {{else}}
-          <p> No documents available</p>
+        <p> No documents available</p>
         {{/if}}
       </div>
       <div class="doc-info resume">
         <h4><u>Resume</u></h4><br>
         {{#if rdata}}
-          {{#each rdata}}
-          <a href={{this.fileURL}}>{{this.empName}} - Resume
-            <img src={{this.fileIcon}} alt="File ICON" />
-          </a>
-          <br><br>
-          {{/each}}
+        {{#each rdata}}
+        <a href={{this.fileURL}}>{{this.empName}} - Resume
+          <img src={{this.fileIcon}} alt="File ICON" />
+        </a>
+        <br><br>
+        {{/each}}
         {{else}}
-          <p> No documents available</p>
+        <p> No documents available</p>
         {{/if}}
       </div>
       <div class="doc-info offer-letter">
         <h4><u>Offer Letter</u></h4><br>
         {{#if odata}}
-          {{#each odata}}
-          <a href={{this.fileURL}}> {{this.empName}} - Offer Letter
-            <img src={{this.fileIcon}} alt="File ICON" />
-          </a>
-          <br><br>
-          {{/each}}
+        {{#each odata}}
+        <a href={{this.fileURL}}> {{this.empName}} - Offer Letter
+          <img src={{this.fileIcon}} alt="File ICON" />
+        </a>
+        <br><br>
+        {{/each}}
         {{else}}
-          <p> No documents available</p>
+        <p> No documents available</p>
         {{/if}}
       </div>
       <div class="doc-info compensation">
         <h4><u>Annual Compensation</u></h4><br>
         {{#if acdata}}
-          {{#each acdata}}
-          <a href={{this.fileURL}}> FY {{this.year}} - {{this.name}} Compensation
-            <img src={{this.fileIcon}} alt="File ICON" />
-          </a>
-          <br><br>
-          {{/each}}
+        {{#each acdata}}
+        <a href={{this.fileURL}}> FY {{this.year}} - {{this.name}} Compensation
+          <img src={{this.fileIcon}} alt="File ICON" />
+        </a>
+        <br><br>
+        {{/each}}
         {{else}}
-          <p> No documents available</p>
+        <p> No documents available</p>
         {{/if}}
       </div>
     </div>

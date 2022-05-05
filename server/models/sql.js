@@ -2,8 +2,8 @@ const connection = require("./db");
 
 async function createTable() {
 
-    let empTable = await connection.query(
-      `CREATE TABLE IF NOT EXISTS pixelweb_db.employee (
+  let empTable = await connection.query(
+    `CREATE TABLE IF NOT EXISTS pixelweb_db.employee (
       empid INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
       firstname varchar(20) NOT NULL,
       lastname varchar(20) NOT NULL,
@@ -13,8 +13,8 @@ async function createTable() {
       confirm_password varchar(50) NOT NULL
     )`);
 
-    let timeentryTable = await connection.query(
-      `CREATE TABLE IF NOT EXISTS pixelweb_db.timesheet (
+  let timeentryTable = await connection.query(
+    `CREATE TABLE IF NOT EXISTS pixelweb_db.timesheet (
         timesheetId int NOT NULL AUTO_INCREMENT,
         empId int NOT NULL,
         empName varchar(30) NOT NULL,
@@ -28,8 +28,8 @@ async function createTable() {
               ON UPDATE CASCADE 
       )`);
 
-    let goalsTable = await connection.query(
-      `CREATE TABLE IF NOT EXISTS pixelweb_db.goals (
+  let goalsTable = await connection.query(
+    `CREATE TABLE IF NOT EXISTS pixelweb_db.goals (
         goalId int NOT NULL AUTO_INCREMENT,
         empId int NOT NULL,
         empName varchar(30) NOT NULL,
@@ -44,8 +44,8 @@ async function createTable() {
               ON UPDATE CASCADE 
       )`);
 
-    let docsTable = await connection.query(
-      `CREATE TABLE pixelweb_db.documents (
+  let docsTable = await connection.query(
+    `CREATE TABLE pixelweb_db.documents (
         docId int NOT NULL AUTO_INCREMENT,
         empId int NOT NULL,
         empName varchar(30) NOT NULL,
@@ -61,7 +61,7 @@ async function createTable() {
               ON DELETE CASCADE 
               ON UPDATE CASCADE 
       )`);
-      
+
 }
 
 async function docsData() {

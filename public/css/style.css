@@ -463,14 +463,16 @@ body {
 	color: red;
 }
 
-.entrymsg{
+.entrymsg {
 	color: green;
 	display: none;
 }
 
-#empid, #emp_name {
+#empid,
+#emp_name {
 	background-color: #e6e7e9;
-} 
+}
+
 @media (max-width: 768px) {
 	#timesheet input {
 		margin-left: 0;
@@ -560,7 +562,10 @@ body {
 	justify-content: center;
 	padding: 20px;
 }
-#sd_file, #docbutton, #getpayslip {
+
+#sd_file,
+#docbutton,
+#getpayslip {
 	margin-bottom: 20px;
 	/* margin-left:122px; */
 }
@@ -572,7 +577,9 @@ body {
 	width: 100px;
 }
 
-#goaltype, #doctype, #getpayslip { 
+#goaltype,
+#doctype,
+#getpayslip {
 	padding: 10px;
 	border: 1px solid #ced4da;
 	margin-bottom: 20px;
@@ -606,7 +613,7 @@ body {
 }
 
 #login,
-#register, 
+#register,
 #editprofile {
 	width: 30%;
 	display: flex;
@@ -626,11 +633,13 @@ body {
 }
 
 #login h2,
-#register h2, #editprofile h2 {
+#register h2,
+#editprofile h2 {
 	padding-bottom: 50px;
 }
 
-.pwd-msg, #editprofile p.error {
+.pwd-msg,
+#editprofile p.error {
 	color: red;
 	text-align: center;
 	display: none;
@@ -643,7 +652,7 @@ form {
 
 }
 
-#lr-sec input{
+#lr-sec input {
 	height: 40px;
 	border-radius: 10px;
 	border: 1px solid #000;
@@ -696,7 +705,7 @@ form {
 	background-color: #8fc8df;
 	margin: auto;
 	height: 600px;
-	width: 600px;	
+	width: 600px;
 }
 
 #errorpage .e1 {
@@ -720,10 +729,10 @@ form {
 	font-size: 10rem;
 	left: 68%;
 	top: 8%;
-	color: #fff;	
+	color: #fff;
 }
 
-#errorpage .msg {	
+#errorpage .msg {
 	position: absolute;
 	font-size: 1.6rem;
 	left: 16%;

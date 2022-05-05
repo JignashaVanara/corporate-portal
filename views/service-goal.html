@@ -1,45 +1,44 @@
 <!-- service goal section start -->
-  <section id="service-goal">
-    <div class="container mt-5 mb-5">
-      <h1 style="text-align: center;">Performance Check</h1>
-      <hr>
-      <div class="d-flex justify-content-center row">
-        <div class="d-flex flex-column col-md-8">
-          <div class="coment-bottom bg-white p-2 px-4">
-            <div class="flex-row add-comment-section mt-4 mb-4">
-              <h3><u>Goals:</u></h3><br>
-              <select name="Goals" id="goaltype" size="1">
-                <option value="" selected="selected">-- Select Type --</option>
-              </select>
-              <br>
-              <select name="Goals" id="goalname" size="1">
-                <option value="" selected="selected">-- Select Name --</option>
-              </select>
-              <br>
-              <textarea id="goal-comment" rows="4" cols="50" class="form-control mr-3"
-                placeholder="Add comment"></textarea><br>
-              <button class="btn btn-primary" type="button" id="goal-btn"
-                onclick="add_comments()">Comment</button>
+<section id="service-goal">
+  <div class="container mt-5 mb-5">
+    <h1 style="text-align: center;">Performance Check</h1>
+    <hr>
+    <div class="d-flex justify-content-center row">
+      <div class="d-flex flex-column col-md-8">
+        <div class="coment-bottom bg-white p-2 px-4">
+          <div class="flex-row add-comment-section mt-4 mb-4">
+            <h3><u>Goals:</u></h3><br>
+            <select name="Goals" id="goaltype" size="1">
+              <option value="" selected="selected">-- Select Type --</option>
+            </select>
+            <br>
+            <select name="Goals" id="goalname" size="1">
+              <option value="" selected="selected">-- Select Name --</option>
+            </select>
+            <br>
+            <textarea id="goal-comment" rows="4" cols="50" class="form-control mr-3"
+              placeholder="Add comment"></textarea><br>
+            <button class="btn btn-primary" type="button" id="goal-btn" onclick="add_comments()">Comment</button>
+          </div>
+          <div class="commented-section mt-2" id="goal-data">
+            {{#each data}}
+            <hr>
+            <div class='d-flex flex-row align-items-center commented-user'>
+              <h5 class='mr-2'>{{this.empName}}</h5> &nbsp;
+              <span class='dot mb-1'></span> &nbsp;
+              <span class='mb-1 ml-2'>{{this.createdAt}}</span>
             </div>
-            <div class="commented-section mt-2" id="goal-data">
-              {{#each data}}
-              <hr>
-              <div class='d-flex flex-row align-items-center commented-user'>
-                <h5 class='mr-2'>{{this.empName}}</h5> &nbsp;
-                <span class='dot mb-1'></span> &nbsp;
-                <span class='mb-1 ml-2'>{{this.createdAt}}</span>
-              </div>
-              <p>{{this.goalType}} &nbsp;
-                <span class='dot mb-1'></span> &nbsp;
-                {{this.goalName}}
-              </p>
-              {{this.comments}}
-              <br/>
-              {{/each}}
-            </div>
+            <p>{{this.goalType}} &nbsp;
+              <span class='dot mb-1'></span> &nbsp;
+              {{this.goalName}}
+            </p>
+            {{this.comments}}
+            <br />
+            {{/each}}
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- service goal section end -->
+  </div>
+</section>
+<!-- service goal section end -->
