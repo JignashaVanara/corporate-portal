@@ -109,8 +109,8 @@
     6. You can see your comments with current date and time on screen.
 
 * Service Docs Page:
-    1. This page contains only files and it's a static page.
-    2. Logged in employee can see payslip, resume, compensasion letter, offer letter through this page.
+    1. This page contains only files.
+    2. Logged in employee can upload payslip, resume, compensasion letter, offer letter through this page and file will be displayed in respective block on screen.
 
 * Contact Page:
     1. This page contains only information and it's a static page.
