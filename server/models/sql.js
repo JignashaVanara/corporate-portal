@@ -45,7 +45,7 @@ async function createTable() {
       )`);
 
   let docsTable = await connection.query(
-    `CREATE TABLE pixelweb_db.documents (
+    `CREATE TABLE IF NOT EXISTS pixelweb_db.documents (
         docId int NOT NULL AUTO_INCREMENT,
         empId int NOT NULL,
         empName varchar(30) NOT NULL,

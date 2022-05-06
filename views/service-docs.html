@@ -4,20 +4,6 @@
     <h1 style="text-align: center;">Documents</h1>
     <hr>
     <div class="row doc-sec">
-      <div class="doc-info">
-        <form action="/api/docs/fileupload" enctype="multipart/form-data" method="post">
-          <select name="empdocs" id="doctype" size="1">
-            <option value="" selected="selected">Select document type</option>
-            <option value="PaySlips">Pay Slips</option>
-            <option value="Resume">Resume</option>
-            <option value="OfferLetter">Offer Letter</option>
-            <option value="AnnualCompensation">Annual Compensation</option>
-          </select>
-          <input type="month" id="getpayslip" name="my" />
-          <input type="file" id="sd_file" name="file">
-          <button class="btn btn-primary" type="submit" id="docbutton" value="Upload">Upload</button>
-        </form>
-      </div>
       <div class="doc-info payslips">
         <h4><u>Pay Slips</u></h4><br>
         {{#if pdata}}
@@ -69,6 +55,20 @@
         {{else}}
         <p> No documents available</p>
         {{/if}}
+      </div>
+      <div class="doc-info">
+        <form action="/api/docs/fileupload" enctype="multipart/form-data" method="post">
+          <select name="empdocs" id="doctype" size="1">
+            <option value="" selected="selected">Select document type</option>
+            <option value="PaySlips">Pay Slips</option>
+            <option value="Resume">Resume</option>
+            <option value="OfferLetter">Offer Letter</option>
+            <option value="AnnualCompensation">Annual Compensation</option>
+          </select>
+          <input type="month" id="getpayslip" name="my" />
+          <input type="file" id="sd_file" name="file">
+          <button class="btn btn-primary" type="submit" id="docbutton" value="Upload">Upload</button>
+        </form>
       </div>
     </div>
   </div>

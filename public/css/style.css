@@ -578,6 +578,7 @@ body {
 }
 
 #goaltype,
+#goalname,
 #doctype,
 #getpayslip {
 	padding: 10px;
