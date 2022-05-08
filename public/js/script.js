@@ -181,21 +181,23 @@ var goalInfo = {
   ]
 }
 
-window.onload = function () {
-  var type = document.getElementById("goaltype");
-  var name = document.getElementById("goalname");
+if (window.location.pathname == "/annual-performance") {
+  window.onload = function () {
+    var type = document.getElementById("goaltype");
+    var name = document.getElementById("goalname");
 
-  for (var gt in goalInfo) {
-    type.options[type.options.length] = new Option(gt, gt);
-  }
+    for (var gt in goalInfo) {
+      type.options[type.options.length] = new Option(gt, gt);
+    }
 
-  type.onchange = function () {
-    name.length = 1;
-    if (this.selectedIndex < 1)
-      return;
-    var gn = goalInfo[this.value];
-    for (var i = 0; i < gn.length; i++) {
-      name.options[name.options.length] = new Option(gn[i], gn[i]);
+    type.onchange = function () {
+      name.length = 1;
+      if (this.selectedIndex < 1)
+        return;
+      var gn = goalInfo[this.value];
+      for (var i = 0; i < gn.length; i++) {
+        name.options[name.options.length] = new Option(gn[i], gn[i]);
+      }
     }
   }
 }
