@@ -602,6 +602,11 @@ body {
 	text-align: center;
 }
 
+#contact a {
+	text-decoration: none;
+	color: #000;
+}
+
 /**** contact css end ****/
 
 /**** login-registration css start ****/
