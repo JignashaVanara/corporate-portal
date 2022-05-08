@@ -2,6 +2,9 @@ const connection = require("./db");
 
 async function createTable() {
 
+  let db = await connection.query(
+    `CREATE DATABASE IF NOT EXISTS pixelweb_db`);
+
   let empTable = await connection.query(
     `CREATE TABLE IF NOT EXISTS pixelweb_db.employee (
       empid INT NOT NULL PRIMARY KEY AUTO_INCREMENT,

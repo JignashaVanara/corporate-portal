@@ -8,7 +8,7 @@
         <h4><u>Pay Slips</u></h4><br>
         {{#if pdata}}
         {{#each pdata}}
-        <a href={{this.fileURL}}> Payslip - {{this.month}}, {{this.year}}
+        <a href={{this.fileURL}} target="_blank"> Payslip - {{this.month}}, {{this.year}}
           <img src={{this.fileIcon}} alt="File ICON" />
         </a>
         <br><br>
@@ -21,7 +21,7 @@
         <h4><u>Resume</u></h4><br>
         {{#if rdata}}
         {{#each rdata}}
-        <a href={{this.fileURL}}>{{this.empName}} - Resume
+        <a href={{this.fileURL}} target="_blank">{{this.empName}} - Resume
           <img src={{this.fileIcon}} alt="File ICON" />
         </a>
         <br><br>
@@ -34,7 +34,7 @@
         <h4><u>Offer Letter</u></h4><br>
         {{#if odata}}
         {{#each odata}}
-        <a href={{this.fileURL}}> {{this.empName}} - Offer Letter
+        <a href={{this.fileURL}} target="_blank"> {{this.empName}} - Offer Letter
           <img src={{this.fileIcon}} alt="File ICON" />
         </a>
         <br><br>
@@ -47,7 +47,7 @@
         <h4><u>Annual Compensation</u></h4><br>
         {{#if acdata}}
         {{#each acdata}}
-        <a href={{this.fileURL}}> FY {{this.year}} - {{this.name}} Compensation
+        <a href={{this.fileURL}} target="_blank"> FY {{this.year}} - {{this.name}} Compensation
           <img src={{this.fileIcon}} alt="File ICON" />
         </a>
         <br><br>
