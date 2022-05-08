@@ -524,6 +524,10 @@ body {
 	background-color: aliceblue;
 }
 
+#service-docs h1 {
+	text-align: center;
+}
+
 #service-docs h4 {
 	color: #04121f;
 }
@@ -594,6 +598,10 @@ body {
 	padding-bottom: 50px;
 }
 
+#contact h1 {
+	text-align: center;
+}
+
 /**** contact css end ****/
 
 /**** login-registration css start ****/
@@ -611,6 +619,10 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+}
+
+.lerror{
+	color: red;
 }
 
 #login,
