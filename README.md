@@ -63,7 +63,6 @@
         MYSQL_PORT
         MYSQL_USER
         MYSQL_PASSWORD
-        MYSQL_DB
         
     4. npm install
     
