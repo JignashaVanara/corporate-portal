@@ -73,20 +73,20 @@
        
 ### Navigation Items
 
-    |                               | User Access                                          |
-    |                               |:-:                                                   |
-    | Screen                        | Any User                  |  Employees (with login)  |
-    | ---|:-:| :-:|
-    | Home page                     | ✔                         | ✔                        |
-    | Contact Us                    | ✔                         | ✔                        |
-    | Login Screen                  | ✔                         | ✔                        |
-    | Registration                  | ✔                         | ✔                        |
-    | Edit profile                  |                           | ✔                        |
-    | Delete Account(Menu item only)|                           | ✔                        |
-    | Service timesheet entry Page  |                           | ✔                        |
-    | Service goals page            |                           | ✔                        |
-    | Service documents page        |                           | ✔                        |
-    | sign out (Menu item only)     |                           | ✔                        |
+    |                               |                    User Access                       |
+    |                               |------------------------------------------------------|
+    | Screen                        |         Any User          |  Employees (with login)  |
+    | ------------------------------|---------------------------|--------------------------|
+    | Home page                     |            ✔              |            ✔             |
+    | Contact Us                    |            ✔              |            ✔             |
+    | Login Screen                  |            ✔              |            ✔             |
+    | Registration                  |            ✔              |            ✔             |
+    | Edit profile                  |                           |            ✔             |
+    | Delete Account(Menu item only)|                           |            ✔             |
+    | Service timesheet entry Page  |                           |            ✔             |
+    | Service goals page            |                           |            ✔             |
+    | Service documents page        |                           |            ✔             |
+    | sign out (Menu item only)     |                           |            ✔             |
 
 
 ### About Pages 
