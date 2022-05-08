@@ -70,25 +70,26 @@
     
     6. Use following URL to run project: 
        http://localhost:3000/
+       
+### Navigation Items
+
+    |                               |                    User Access                       |
+    |                               |------------------------------------------------------|
+    | Screen                        |         Any User          |  Employees (with login)  |
+    | ------------------------------|---------------------------|--------------------------|
+    | Home page                     |            ✔              |            ✔             |
+    | Contact Us                    |            ✔              |            ✔             |
+    | Login Screen                  |            ✔              |            ✔             |
+    | Registration                  |            ✔              |            ✔             |
+    | Edit profile                  |                           |            ✔             |
+    | Delete Account(Menu item only)|                           |            ✔             |
+    | Service timesheet entry Page  |                           |            ✔             |
+    | Service goals page            |                           |            ✔             |
+    | Service documents page        |                           |            ✔             |
+    | sign out (Menu item only)     |                           |            ✔             |
+
 
 ### About Pages 
-
-* Navigation Items
-    1. Any user can see following pages without login in system.
-        - Home page
-        - Contact us page
-        - Login screen
-        - Registration screen
-    
-    2. Logged in user can use following pages.
-        - Home page
-        - Contact us page
-        - Edit profile screen
-        - Service timesheet entry page
-        - Service goals page
-        - Service documents page
-        - user can delete account through navigation submenu item(delete account).
-        - user can logout from the session using submenu item(sign out).
 
 * Home Page:
     1. This page contains only information and it's a static page.
