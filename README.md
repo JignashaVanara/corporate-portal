@@ -145,7 +145,22 @@
 
 
 ## Help
-(advise for common problems or issues.)
+    1. While connecting MYSQL DB in heroku you might get "PROTOCOL_CONNECTION_LOST" error.
+        
+        Error: Connection lost: The server closed the connection.
+            at Protocol.end (/app/node_modules/mysql/lib/protocol/Protocol.js:112:13)
+            at Socket.<anonymous> (/app/node_modules/mysql/lib/Connection.js:94:28)
+            .....
+            at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+            fatal: true,
+            code: 'PROTOCOL_CONNECTION_LOST'
+            }
+            app crashed - waiting for file changes before starting...
+
+
+        Solution: 
+            - Mysql connection errors fire after 60 seconds of inactivity and it will terminate the process as it's a default behaviour in node.js.
+            - Use mysql.createPool() for db connection insead of mysql.createConnection() to solve it.
 
 ## Author
 Jignasha Vanara

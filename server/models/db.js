@@ -18,7 +18,7 @@ connection.on('error', function (err) {
     }
 });
 
-function handleDisconnect(){
+function handleDisconnect(){    
     connection = mysql.createPool(db_config);
 }
 
