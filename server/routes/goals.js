@@ -9,7 +9,7 @@ router.post('/addcomments', function (req, res, next) {
     let goalname = req.body.goalname;
     let comment = req.body.comment;
 
-    connection.query('INSERT INTO `pixelweb_db`.`goals` (`empId`, `empName`, `goalType`, `goalName`, `createdAt`, `comments`) VALUES ( ?, ?, ?, ?, NOW(), ?)', [empid, ename, goaltype, goalname, comment], function (err, rows, fields) {
+    connection.query('INSERT INTO `goals` (`empId`, `empName`, `goalType`, `goalName`, `createdAt`, `comments`) VALUES ( ?, ?, ?, ?, NOW(), ?)', [empid, ename, goaltype, goalname, comment], function (err, rows, fields) {
         if (err) throw err
         res.json({ redirect: '/annual-performance', message: 'Comment added successfully.' })
     })

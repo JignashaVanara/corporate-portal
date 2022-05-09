@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const connection = require('../models/db');
+let dbname = process.env.MYSQL_DB; 
 
 //authenticate user
 router.post('/authentication', function (req, res, next) {
@@ -7,7 +8,7 @@ router.post('/authentication', function (req, res, next) {
     let username = req.body.username;
     let pwd = req.body.pass;
 
-    connection.query('SELECT * FROM pixelweb_db.employee WHERE username = ? AND password = ?', [username, pwd], function (err, rows, fields) {
+    connection.query('SELECT * FROM employee WHERE username = ? AND password = ?', [username, pwd], function (err, rows, fields) {
         if (err) throw err
 
         // if user not found
@@ -37,7 +38,7 @@ router.post('/adduser', function (req, res, next) {
     let pass = req.body.pass;
     let confirm_pass = req.body.confirm_pass;
 
-    connection.query('INSERT INTO `pixelweb_db`.`employee` (`firstname`, `lastname`, `username`, `email`, `password`, `confirm_password`) VALUES ( ?, ?, ?, ?, ?, ?)', [firstname, lastname, username, email, pass, confirm_pass], function (err, rows, fields) {
+    connection.query('INSERT INTO `employee` (`firstname`, `lastname`, `username`, `email`, `password`, `confirm_password`) VALUES ( ?, ?, ?, ?, ?, ?)', [firstname, lastname, username, email, pass, confirm_pass], function (err, rows, fields) {
         if (err) throw err
         req.flash('registration', 'User registered successfully.');
         res.redirect('/login');
@@ -54,7 +55,7 @@ router.put('/editempprofile', function (req, res, next) {
     if (firstname == '') firstname = req.session.firstname;
     if (lastname == '') lastname = req.session.lastname;
     if (username == '') username = req.session.username;
-    connection.query('UPDATE `pixelweb_db`.`employee` SET firstname = ?, lastname = ?, username = ? WHERE empid = ?', [firstname, lastname, username, empid], function (err, rows, fields) {
+    connection.query('UPDATE `employee` SET firstname = ?, lastname = ?, username = ? WHERE empid = ?', [firstname, lastname, username, empid], function (err, rows, fields) {
         if (err) throw err
         res.json({ redirect: '/login' })
     })
@@ -64,7 +65,7 @@ router.put('/editempprofile', function (req, res, next) {
 router.delete('/deleteaccount', function (req, res, next) {
     console.log('inside delete route....');
     let empid = req.session.empid;
-    connection.query('DELETE FROM `pixelweb_db`.`employee` WHERE empid = ?', [empid], function (err, rows, fields) {
+    connection.query('DELETE FROM `employee` WHERE empid = ?', [empid], function (err, rows, fields) {
         if (err) throw err
         res.json({ redirect: '/login' })
     })

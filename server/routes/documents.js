@@ -37,7 +37,7 @@ router.post("/fileupload", upload.single('file'), (req, res, next) => {
             filesvg = 'images/svg/file-solid.svg';
         }
 
-        connection.query('INSERT INTO `pixelweb_db`.`documents` (`empId`, `empName`, `docType`, `fileURL`, `fileIcon`, `month`, `year`, `uploadedAt`) VALUES ( ?, ?, ?, ?, ?, ?, ?, NOW())', [empid, ename, doctype, imgsrc, filesvg, month, year], (err, result) => {
+        connection.query('INSERT INTO `documents` (`empId`, `empName`, `docType`, `fileURL`, `fileIcon`, `month`, `year`, `uploadedAt`) VALUES ( ?, ?, ?, ?, ?, ?, ?, NOW())', [empid, ename, doctype, imgsrc, filesvg, month, year], (err, result) => {
             if (err) throw err
             console.log("file uploaded.")
             res.redirect('/documents');
