@@ -2,11 +2,13 @@ const connection = require("./db");
 
 async function createTable() {
 
+  let dbname = process.env.MYSQL_DB; 
+
   let db = await connection.query(
-    `CREATE DATABASE IF NOT EXISTS pixelweb_db`);
+    `CREATE DATABASE IF NOT EXISTS ${dbname}`);
 
   let empTable = await connection.query(
-    `CREATE TABLE IF NOT EXISTS pixelweb_db.employee (
+    `CREATE TABLE IF NOT EXISTS ${dbname}.employee (
       empid INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
       firstname varchar(20) NOT NULL,
       lastname varchar(20) NOT NULL,
@@ -17,7 +19,7 @@ async function createTable() {
     )`);
 
   let timeentryTable = await connection.query(
-    `CREATE TABLE IF NOT EXISTS pixelweb_db.timesheet (
+    `CREATE TABLE IF NOT EXISTS ${dbname}.timesheet (
         timesheetId int NOT NULL AUTO_INCREMENT,
         empId int NOT NULL,
         empName varchar(30) NOT NULL,
@@ -26,13 +28,13 @@ async function createTable() {
         comments varchar(200) NOT NULL,
         PRIMARY KEY (timesheetId),
         FOREIGN KEY (empId)
-              REFERENCES pixelweb_db.employee(empid)
+              REFERENCES ${dbname}.employee(empid)
               ON DELETE CASCADE 
               ON UPDATE CASCADE 
       )`);
 
   let goalsTable = await connection.query(
-    `CREATE TABLE IF NOT EXISTS pixelweb_db.goals (
+    `CREATE TABLE IF NOT EXISTS ${dbname}.goals (
         goalId int NOT NULL AUTO_INCREMENT,
         empId int NOT NULL,
         empName varchar(30) NOT NULL,
@@ -42,13 +44,13 @@ async function createTable() {
         comments varchar(200) NOT NULL,
         PRIMARY KEY (goalId),
         FOREIGN KEY (empId)
-              REFERENCES pixelweb_db.employee(empid)
+              REFERENCES ${dbname}.employee(empid)
               ON DELETE CASCADE 
               ON UPDATE CASCADE 
       )`);
 
   let docsTable = await connection.query(
-    `CREATE TABLE IF NOT EXISTS pixelweb_db.documents (
+    `CREATE TABLE IF NOT EXISTS ${dbname}.documents (
         docId int NOT NULL AUTO_INCREMENT,
         empId int NOT NULL,
         empName varchar(30) NOT NULL,
@@ -60,7 +62,7 @@ async function createTable() {
         uploadedAt date NOT NULL,
         PRIMARY KEY (docId),
         FOREIGN KEY (empId)
-              REFERENCES pixelweb_db.employee(empid)
+              REFERENCES ${dbname}.employee(empid)
               ON DELETE CASCADE 
               ON UPDATE CASCADE 
       )`);
