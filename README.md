@@ -159,7 +159,8 @@
 
 
         Solution: 
-            - Mysql connection errors fire after 60 seconds of inactivity and it will terminate the process as it's a default behaviour in node.js.
+            - Mysql connection errors fire after 60 seconds of inactivity and it will terminate
+              the process as it's a default behaviour in node.js.
             - Use mysql.createPool() for db connection insead of mysql.createConnection() to solve it.
 
 ## Author
