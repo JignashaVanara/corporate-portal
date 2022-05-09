@@ -8,6 +8,7 @@ var hbs = require('hbs');
 var expressValidator = require('express-validator');
 var flash = require('express-flash');
 var session = require('express-session');
+let RedisStore = require("connect-redis")(session)
 var favicon = require('serve-favicon')
 var userRoutes = require('./server/routes/user');
 var serviceTimesheetRoutes = require('./server/routes/timesheet');
@@ -30,9 +31,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const { createClient } = require("redis")
+let redisClient = createClient({ legacyMode: true })
+redisClient.connect().catch(console.error)
+
 app.use(session({
-  cookie: { maxAge: 3600000 },
+  cookie: { secure: true, maxAge: 3600000 },
   secret: 'pixelweb',
+  store: new RedisStore({ client: redisClient }),
   resave: false,
   saveUninitialized: false
 }));
