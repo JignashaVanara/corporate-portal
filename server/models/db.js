@@ -7,15 +7,7 @@ var db_config = {
     database: process.env.MYSQL_DB
 };
 
-connection = mysql.createConnection(db_config);
-
-connection.connect(function (error) {
-    if (error) {
-        console.log('error while connecting to db:', err);
-        setTimeout(handleDisconnect, 2000);
-    } 
-    console.log('Connected...');
-});
+connection = mysql.createPool(db_config);
 
 connection.on('error', function (err) {
     console.log('db error', err);
@@ -27,8 +19,7 @@ connection.on('error', function (err) {
 });
 
 function handleDisconnect(){
-    connection = mysql.createConnection(db_config);
-    connection.connect();
+    connection = mysql.createPool(db_config);
 }
 
 module.exports = connection; 
