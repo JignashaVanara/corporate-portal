@@ -1,4 +1,4 @@
-# Pixel Web Company
+# ![Pixel Web Company](https://github.com/JignashaVanara/Project/blob/master/public/favicon.ico) Pixel Web Company
 
 1. [Description](#description) <br/>
 2. [Getting Started](#getting-started) <br/>
