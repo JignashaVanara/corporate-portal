@@ -13,10 +13,10 @@
     Bootstrap, Node.js, handlebars and MySQL. 
 
 You can find more details about all screen as following:<br/>
-    [Folder Structure](#folder-structure)<br/>
-    [Technologies Used](#technologies-used)<br/>
-    [Navigation Items](#navigation-items)<br/>
-    [About Pages](#about-pages)<br/>
+    &nbsp;&nbsp;&nbsp;[Folder Structure](#folder-structure)<br/>
+    &nbsp;&nbsp;&nbsp;[Technologies Used](#technologies-used)<br/>
+    &nbsp;&nbsp;&nbsp;[Navigation Items](#navigation-items)<br/>
+    &nbsp;&nbsp;&nbsp;[About Pages](#about-pages)<br/>
 
 
 ## Getting Started
@@ -173,9 +173,9 @@ You can find more details about all screen as following:<br/>
 
 ## Screenshots
 
-1. website screenshots are available in screenshot folder of project. 
-        [Desktop View](https://github.com/JignashaVanara/Project/tree/master/screenshots/desktopView)
-        [Responsive View](https://github.com/JignashaVanara/Project/tree/master/screenshots/responsiveView)
+1. website screenshots are available in screenshot folder of project. <br/>
+        &nbsp;&nbsp;&nbsp;[Desktop View](https://github.com/JignashaVanara/Project/tree/master/screenshots/desktopView)<br/>
+        &nbsp;&nbsp;&nbsp;[Responsive View](https://github.com/JignashaVanara/Project/tree/master/screenshots/responsiveView)<br/>
 
 2. Please find the following URL of project ER Diagram.
         [ERD URL](https://github.com/JignashaVanara/Project/tree/master/screenshots/ERD)
