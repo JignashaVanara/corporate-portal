@@ -12,11 +12,11 @@
     Current website is a corporate company portal which is developed using HTML, CSS, JS, Jquery, 
     Bootstrap, Node.js, handlebars and MySQL. 
 
-You can find more details about all screen as following:
-    [Folder Structure](#folder-structure)
-    [Technologies Used](#technologies-used)
-    [Navigation Items](#navigation-items)
-    [About Pages](#about-pages)
+You can find more details about all screen as following:<br/>
+    [Folder Structure](#folder-structure)<br/>
+    [Technologies Used](#technologies-used)<br/>
+    [Navigation Items](#navigation-items)<br/>
+    [About Pages](#about-pages)<br/>
 
 
 ## Getting Started
