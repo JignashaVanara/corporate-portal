@@ -172,11 +172,11 @@
 
 ## Screenshots
 
-1. website screenshots are available in screenshot folder of project. <br/>
+1. Website screenshots are available in screenshot folder of project. <br/>
         &nbsp;&nbsp;&nbsp;[Desktop View](https://github.com/JignashaVanara/Project/tree/master/screenshots/desktopView)<br/>
         &nbsp;&nbsp;&nbsp;[Responsive View](https://github.com/JignashaVanara/Project/tree/master/screenshots/responsiveView)<br/>
 
-2. Please find the following URL of project ER Diagram.
+2. Please find the following URL for project ER Diagram.
         [ERD URL](https://github.com/JignashaVanara/Project/tree/master/screenshots/ERD)
 
 ## Help
