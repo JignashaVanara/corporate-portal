@@ -1,15 +1,15 @@
-# ![Pixel Web Company](https://github.com/JignashaVanara/Project/blob/master/public/favicon.ico) Pixel Web Company
+# <img style="width:30px" src="https://github.com/JignashaVanara/Project/blob/master/public/favicon.ico" alt="Pixel Web Company">     Pixel Web Company
 
-1. [Description](#description) <br/>
-2. [Getting Started](#getting-started) <br/>
-    - &nbsp;&nbsp;&nbsp;[Folder Structure](#folder-structure)<br/>
-    - &nbsp;&nbsp;&nbsp;[Technologies Used](#technologies-used)<br/>
-    - &nbsp;&nbsp;&nbsp;[Navigation Items](#navigation-items)<br/>
-    - &nbsp;&nbsp;&nbsp;[About Pages](#about-pages)<br/>
-3. [Executing program](#executing-program) <br/>
-4. [Screenshots](#screenshots) <br/>
-5. [Help](#help) <br/>
-6. [Author](#author) <br/>
+* [Description](#description) <br/>
+* [Getting Started](#getting-started) <br/>
+    * [Folder Structure](#folder-structure)<br/>
+    * [Technologies Used](#technologies-used)<br/>
+    * [Navigation Items](#navigation-items)<br/>
+    * [About Pages](#about-pages)<br/>
+* [Executing program](#executing-program) <br/>
+* [Screenshots](#screenshots) <br/>
+* [Help](#help) <br/>
+* [Author](#author) <br/>
 
 
 ## Description
