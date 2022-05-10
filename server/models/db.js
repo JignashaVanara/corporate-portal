@@ -3,8 +3,7 @@ var mysql = require('mysql');
 var db_config = {
     host: process.env.MYSQL_HOST,
     user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DB
+    password: process.env.MYSQL_PASSWORD
 };
 
 connection = mysql.createPool(db_config);

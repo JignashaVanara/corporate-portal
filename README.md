@@ -159,9 +159,9 @@
     
     3. set following config variables in your environment file to connect your local MySQL DB.
         MYSQL_HOST
-        MYSQL_PORT
         MYSQL_USER
         MYSQL_PASSWORD
+        MYSQL_DB
         
     4. npm install
     
