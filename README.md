@@ -1,11 +1,12 @@
 # Pixel Web Company
 
-[Description]()
-[Getting Started]()
-[Executing program]()
-[Screenshots]()
-[Help]()
-[Author]()
+[Description](#description) <br/>
+[Getting Started](#getting-started) <br/>
+[Executing program](#executing-program) <br/>
+[Screenshots](#screenshots) <br/>
+[Help](#help) <br/>
+[Author](#author) <br/>
+
 
 ## Description
     Current website is a corporate company portal which is developed using HTML, CSS, JS, Jquery, 
@@ -16,6 +17,7 @@ You can find more details about all screen as following:
     [Technologies Used](#technologies-used)
     [Navigation Items](#navigation-items)
     [About Pages](#about-pages)
+
 
 ## Getting Started
 
@@ -82,20 +84,18 @@ You can find more details about all screen as following:
        
 ### Navigation Items
 
-    |                               |                    User Access                       |
-    |                               |------------------------------------------------------|
-    | Screen                        |         Any User          |  Employees (with login)  |
-    | ------------------------------|---------------------------|--------------------------|
-    | Home page                     |            ✔              |            ✔             |
-    | Contact Us                    |            ✔              |            ✔             |
-    | Login Screen                  |            ✔              |            ✔             |
-    | Registration                  |            ✔              |            ✔             |
-    | Edit profile                  |                           |            ✔             |
-    | Delete Account(Menu item only)|                           |            ✔             |
-    | Service timesheet entry Page  |                           |            ✔             |
-    | Service goals page            |                           |            ✔             |
-    | Service documents page        |                           |            ✔             |
-    | sign out (Menu item only)     |                           |            ✔             |
+| Screen                        |         Any User          |  Employees (with login)  |
+|-------------------------------|:-------------------------:|:------------------------:|
+| Home page                     |            ✔              |            ✔             |
+| Contact Us                    |            ✔              |            ✔             |
+| Login Screen                  |            ✔              |            ✔             |
+| Registration                  |            ✔              |            ✔             |
+| Edit profile                  |                           |            ✔             |
+| Delete Account(Menu item only)|                           |            ✔             |
+| Service timesheet entry Page  |                           |            ✔             |
+| Service goals page            |                           |            ✔             |
+| Service documents page        |                           |            ✔             |
+| sign out (Menu item only)     |                           |            ✔             |
 
 
 ### About Pages 
