@@ -701,8 +701,9 @@ form {
 @media (max-width: 768px) {
 
 	#login,
-	#register {
-		width: 80%;
+	#register, 
+	#editprofile {
+		width:100%;
 	}
 
 	#login-wrap,

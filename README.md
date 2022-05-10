@@ -1,8 +1,21 @@
 # Pixel Web Company
 
+[Description]()
+[Getting Started]()
+[Executing program]()
+[Screenshots]()
+[Help]()
+[Author]()
+
 ## Description
     Current website is a corporate company portal which is developed using HTML, CSS, JS, Jquery, 
-    Bootstrap, Node.js and handlebars. 
+    Bootstrap, Node.js, handlebars and MySQL. 
+
+    You can find more details about all screen as following:
+        [Folder Structure]()
+        [Technologies Used]()
+        [Navigation Items]()
+        [About Pages]()
 
 ## Getting Started
 
@@ -52,24 +65,20 @@
     ├── package.json
     └── README.md
      
-### Executing program
-
-    1. git clone https://github.com/JignashaVanara/Project.git
+### Technologies Used
     
-    2. cd Project
-    
-    3. set following config variables in your environment file to connect your local MySQL DB.
-        MYSQL_HOST
-        MYSQL_PORT
-        MYSQL_USER
-        MYSQL_PASSWORD
-        
-    4. npm install
-    
-    5. npm start
-    
-    6. Use following URL to run project: 
-       http://localhost:3000/
+    1. Front End:
+            - HTML
+            - CSS
+            - Javascript
+            - JQuery
+            - Bootstrap
+            - Handlebars (Express front end template tool)
+    2. Back End:
+            - Node.js 
+            - Express JS Framework
+            - MySQL
+            
        
 ### Navigation Items
 
@@ -143,6 +152,32 @@
     2. Correct firstname, lastname or username and click on edit button to make changes.
     3. If there is not any data update then click on cancel button you will be redirected to home page.
 
+## Executing program
+
+    1. git clone https://github.com/JignashaVanara/Project.git
+    
+    2. cd Project
+    
+    3. set following config variables in your environment file to connect your local MySQL DB.
+        MYSQL_HOST
+        MYSQL_PORT
+        MYSQL_USER
+        MYSQL_PASSWORD
+        
+    4. npm install
+    
+    5. npm start
+    
+    6. Use following URL to run project: 
+       http://localhost:3000/
+
+## Screenshots
+    1. website screenshots are available in screenshot folder of project. 
+        Desktop View: https://github.com/JignashaVanara/Project/tree/master/screenshots/desktopView
+        Responsive View: https://github.com/JignashaVanara/Project/tree/master/screenshots/responsiveView
+
+    2. Please find the following URL of project ER Diagram.
+        ERD URL: https://github.com/JignashaVanara/Project/tree/master/screenshots/ERD
 
 ## Help
     1. While connecting MYSQL DB in heroku you might get "PROTOCOL_CONNECTION_LOST" error.
