@@ -11,12 +11,6 @@
     Current website is a corporate company portal which is developed using HTML, CSS, JS, Jquery, 
     Bootstrap, Node.js, handlebars and MySQL. 
 
-    You can find more details about all screen as following:
-        [Folder Structure](#folder-structure)
-        [Technologies Used]()
-        [Navigation Items]()
-        [About Pages]()
-
 ## Getting Started
 
 ### Folder Structure
@@ -82,20 +76,20 @@
        
 ### Navigation Items
 
-    |                               |                    User Access                       |
-    |                               |------------------------------------------------------|
-    | Screen                        |         Any User          |  Employees (with login)  |
-    | ------------------------------|---------------------------|--------------------------|
-    | Home page                     |            ✔              |            ✔             |
-    | Contact Us                    |            ✔              |            ✔             |
-    | Login Screen                  |            ✔              |            ✔             |
-    | Registration                  |            ✔              |            ✔             |
-    | Edit profile                  |                           |            ✔             |
-    | Delete Account(Menu item only)|                           |            ✔             |
-    | Service timesheet entry Page  |                           |            ✔             |
-    | Service goals page            |                           |            ✔             |
-    | Service documents page        |                           |            ✔             |
-    | sign out (Menu item only)     |                           |            ✔             |
+|                               |                    User Access                       |
+|                               |------------------------------------------------------|
+| Screen                        |         Any User          |  Employees (with login)  |
+| ------------------------------|---------------------------|--------------------------|
+| Home page                     |            ✔              |            ✔             |
+| Contact Us                    |            ✔              |            ✔             |
+| Login Screen                  |            ✔              |            ✔             |
+| Registration                  |            ✔              |            ✔             |
+| Edit profile                  |                           |            ✔             |
+| Delete Account(Menu item only)|                           |            ✔             |
+| Service timesheet entry Page  |                           |            ✔             |
+| Service goals page            |                           |            ✔             |
+| Service documents page        |                           |            ✔             |
+| sign out (Menu item only)     |                           |            ✔             |
 
 
 ### About Pages 
