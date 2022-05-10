@@ -1,18 +1,18 @@
 # Pixel Web Company
 
-[Description]()
-[Getting Started]()
-[Executing program]()
-[Screenshots]()
-[Help]()
-[Author]()
+[Description](#description) <br/>
+[Getting Started](#getting-started) <br/>
+[Executing program](#executing-program) <br/>
+[Screenshots](#screenshots) <br/>
+[Help](#help) <br/>
+[Author](#author) <br/>
 
 ## Description
     Current website is a corporate company portal which is developed using HTML, CSS, JS, Jquery, 
     Bootstrap, Node.js, handlebars and MySQL. 
 
     You can find more details about all screen as following:
-        [Folder Structure]()
+        [Folder Structure](#folder-structure)
         [Technologies Used]()
         [Navigation Items]()
         [About Pages]()
