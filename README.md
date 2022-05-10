@@ -1,23 +1,20 @@
 # Pixel Web Company
 
-[Description](#description) <br/>
-[Getting Started](#getting-started) <br/>
-[Executing program](#executing-program) <br/>
-[Screenshots](#screenshots) <br/>
-[Help](#help) <br/>
-[Author](#author) <br/>
+1. [Description](#description) <br/>
+2. [Getting Started](#getting-started) <br/>
+    &nbsp;&nbsp;&nbsp;[Folder Structure](#folder-structure)<br/>
+    &nbsp;&nbsp;&nbsp;[Technologies Used](#technologies-used)<br/>
+    &nbsp;&nbsp;&nbsp;[Navigation Items](#navigation-items)<br/>
+    &nbsp;&nbsp;&nbsp;[About Pages](#about-pages)<br/>
+3. [Executing program](#executing-program) <br/>
+4. [Screenshots](#screenshots) <br/>
+5. [Help](#help) <br/>
+6. [Author](#author) <br/>
 
 
 ## Description
     Current website is a corporate company portal which is developed using HTML, CSS, JS, Jquery, 
     Bootstrap, Node.js, handlebars and MySQL. 
-
-You can find more details about all screen as following:<br/>
-    &nbsp;&nbsp;&nbsp;[Folder Structure](#folder-structure)<br/>
-    &nbsp;&nbsp;&nbsp;[Technologies Used](#technologies-used)<br/>
-    &nbsp;&nbsp;&nbsp;[Navigation Items](#navigation-items)<br/>
-    &nbsp;&nbsp;&nbsp;[About Pages](#about-pages)<br/>
-
 
 ## Getting Started
 
@@ -131,7 +128,7 @@ You can find more details about all screen as following:<br/>
             - password should not be empty and it should have min length of 8 characters.
         2. on click of sign-up button, user will redirect to register screen.
 
-    * Registration Page:
+    Registration Page:
         1. on click of login button, system verifies the following validations.
             - Firstname should not be empty.
             - Lastname should not be empty.
