@@ -76,9 +76,8 @@
        
 ### Navigation Items
 
-| Screen                        |        User Access                                   |
+| Screen                        |         Any User          |  Employees (with login)  |
 | :-----------------------------|:----------------------------------------------------:|
-|                               |         Any User          |  Employees (with login)  |
 | Home page                     |            ✔              |            ✔             |
 | Contact Us                    |            ✔              |            ✔             |
 | Login Screen                  |            ✔              |            ✔             |
