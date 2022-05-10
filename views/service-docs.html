@@ -58,15 +58,15 @@
       </div>
       <div class="doc-info">
         <form action="/api/docs/fileupload" enctype="multipart/form-data" method="post">
-          <select name="empdocs" id="doctype" size="1">
+          <select name="empdocs" id="doctype" size="1" required>
             <option value="" selected="selected">Select document type</option>
             <option value="PaySlips">Pay Slips</option>
             <option value="Resume">Resume</option>
             <option value="OfferLetter">Offer Letter</option>
             <option value="AnnualCompensation">Annual Compensation</option>
           </select>
-          <input type="month" id="getpayslip" name="my" />
-          <input type="file" id="sd_file" name="file">
+          <input type="month" id="getpayslip" name="my" required/>
+          <input type="file" id="sd_file" name="file" required>
           <button class="btn btn-primary" type="submit" id="docbutton" value="Upload">Upload</button>
         </form>
       </div>

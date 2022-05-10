@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const connection = require('../models/db');
+let dbname = process.env.MYSQL_DB; 
 
 router.get('/', function (req, res, next) {
     if (req.session.loggedin == true) {
@@ -15,7 +16,7 @@ router.get('/', function (req, res, next) {
 
 router.get('/annual-performance', function (req, res, next) {
     if (req.session.loggedin == true) {
-        connection.query('SELECT * FROM `goals`', function (err, rows, fields) {
+        connection.query(`SELECT * FROM ${dbname}.goals`, function (err, rows, fields) {
             if (err) throw err
 
             res.render('service-goal', {
@@ -42,7 +43,7 @@ router.get('/timesheet', function (req, res, next) {
 
 router.get('/documents', function (req, res, next) {
     if (req.session.loggedin == true) {
-        connection.query('SELECT * FROM `documents`', function (err, rows, fields) {
+        connection.query(`SELECT * FROM ${dbname}.documents`, function (err, rows, fields) {
             if (err) throw err
             const payslipData = rows.filter(row => row && row.docType && row.docType === "PaySlips");
             const resumeData = rows.filter(row => row && row.docType && row.docType === "Resume");

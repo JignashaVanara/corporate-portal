@@ -1,5 +1,6 @@
 var router = require('express').Router();
 var connection = require('../models/db');
+let dbname = process.env.MYSQL_DB; 
 
 //add efforts
 router.post('/addefforts', function (req, res, next) {
@@ -10,7 +11,7 @@ router.post('/addefforts', function (req, res, next) {
     let efforts = req.body.efforts;
     let comment = req.body.comment;
 
-    connection.query('INSERT INTO `timesheet` (`empId`, `empName`, `day`, `efforts`, `comments`) VALUES ( ?, ?, ?, ?, ?)', [empid, ename, day, efforts, comment], function (err, rows, fields) {
+    connection.query(`INSERT INTO ${dbname}.timesheet ('empId', 'empName', 'day', 'efforts', 'comments') VALUES ( ?, ?, ?, ?, ?)`, [empid, ename, day, efforts, comment], function (err, rows, fields) {
         if (err) throw err
         res.json({ redirect: '/timesheet', message: 'Efforts logged successfully.' })
     })
