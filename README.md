@@ -2,10 +2,10 @@
 
 1. [Description](#description) <br/>
 2. [Getting Started](#getting-started) <br/>
-    &nbsp;&nbsp;&nbsp;[Folder Structure](#folder-structure)<br/>
-    &nbsp;&nbsp;&nbsp;[Technologies Used](#technologies-used)<br/>
-    &nbsp;&nbsp;&nbsp;[Navigation Items](#navigation-items)<br/>
-    &nbsp;&nbsp;&nbsp;[About Pages](#about-pages)<br/>
+    - &nbsp;&nbsp;&nbsp;[Folder Structure](#folder-structure)<br/>
+    - &nbsp;&nbsp;&nbsp;[Technologies Used](#technologies-used)<br/>
+    - &nbsp;&nbsp;&nbsp;[Navigation Items](#navigation-items)<br/>
+    - &nbsp;&nbsp;&nbsp;[About Pages](#about-pages)<br/>
 3. [Executing program](#executing-program) <br/>
 4. [Screenshots](#screenshots) <br/>
 5. [Help](#help) <br/>
