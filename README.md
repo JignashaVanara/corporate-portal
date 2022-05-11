@@ -162,13 +162,14 @@
         MYSQL_USER
         MYSQL_PASSWORD
         MYSQL_DB
+        PORT (any port number you can choose)
         
     4. npm install
     
     5. npm start
     
     6. Use following URL to run project: 
-       http://localhost:3000/
+       http://localhost:3000/ or http://localhost:<your selected port number from env>
 
 ## Screenshots
 
