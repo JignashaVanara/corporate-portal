@@ -57,6 +57,9 @@
         {{/if}}
       </div>
       <div class="doc-info">
+        {{#if messages.error}}
+        <p class="docerror">{{messages.error}}</p>
+        {{/if}}
         <form action="/api/docs/fileupload" enctype="multipart/form-data" method="post">
           <select name="empdocs" id="doctype" size="1" required>
             <option value="" selected="selected">Select document type</option>

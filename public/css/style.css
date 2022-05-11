@@ -468,6 +468,12 @@ body {
 	display: none;
 }
 
+.timeerror, .goalerror, .docerror {
+	display: none;
+	color: red;
+	padding-bottom:10px;
+}
+
 #empid,
 #emp_name {
 	background-color: #e6e7e9;

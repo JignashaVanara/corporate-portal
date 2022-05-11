@@ -1,6 +1,5 @@
 var router = require('express').Router();
 var connection = require('../models/db');
-let dbname = process.env.MYSQL_DB; 
 
 router.post('/addcomments', function (req, res, next) {
     console.log(req.body);
@@ -9,8 +8,9 @@ router.post('/addcomments', function (req, res, next) {
     let goaltype = req.body.goaltype;
     let goalname = req.body.goalname;
     let comment = req.body.comment;
+    let dbname = process.env.MYSQL_DB; 
 
-    connection.query(`INSERT INTO ${dbname}.goals ('empId', 'empName', 'goalType', 'goalName', 'createdAt', 'comments') VALUES ( ?, ?, ?, ?, NOW(), ?)`, [empid, ename, goaltype, goalname, comment], function (err, rows, fields) {
+    connection.query(`INSERT INTO ${dbname}.goals (empId, empName, goalType, goalName, createdAt, comments) VALUES ( ?, ?, ?, ?, NOW(), ?)`, [empid, ename, goaltype, goalname, comment], function (err, rows, fields) {
         if (err) throw err
         res.json({ redirect: '/annual-performance', message: 'Comment added successfully.' })
     })

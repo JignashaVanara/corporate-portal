@@ -2,7 +2,6 @@ var router = require('express').Router();
 var connection = require('../models/db');
 const multer = require('multer');
 var path = require('path');
-let dbname = process.env.MYSQL_DB; 
 
 var storage = multer.diskStorage({
     destination: (req, file, callBack) => {
@@ -29,6 +28,7 @@ router.post("/fileupload", upload.single('file'), (req, res, next) => {
         let year = (monthyear.split("-"))[0];
         let month = (monthyear.split("-"))[1];
         let fileextention = path.extname(req.file.originalname);
+        let dbname = process.env.MYSQL_DB; 
 
         if (fileextention == ".doc") {
             filesvg = 'images/svg/file-word-solid.svg';
@@ -38,11 +38,15 @@ router.post("/fileupload", upload.single('file'), (req, res, next) => {
             filesvg = 'images/svg/file-solid.svg';
         }
 
-        connection.query(`INSERT INTO ${dbname}.documents ('empId', 'empName', 'docType', 'fileURL', 'fileIcon', 'month', 'year', 'uploadedAt') VALUES ( ?, ?, ?, ?, ?, ?, ?, NOW())`, [empid, ename, doctype, imgsrc, filesvg, month, year], (err, result) => {
-            if (err) throw err
-            console.log("file uploaded.")
-            res.redirect('/documents');
-        })
+        if (doctype == '' && req.file.filename == '' ) {
+            req.flash('error', 'Please enter required field.');
+        } else {
+            connection.query(`INSERT INTO ${dbname}.documents (empId, empName, docType, fileURL, fileIcon, month, year, uploadedAt) VALUES ( ?, ?, ?, ?, ?, ?, ?, NOW())`, [empid, ename, doctype, imgsrc, filesvg, month, year], (err, result) => {
+                if (err) throw err
+                console.log("file uploaded.")
+                res.redirect('/documents');
+            })
+        }    
     }
 });
 

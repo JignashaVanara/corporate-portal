@@ -38,7 +38,7 @@ router.post('/adduser', function (req, res, next) {
     let pass = req.body.pass;
     let confirm_pass = req.body.confirm_pass;
 
-    connection.query(`INSERT INTO ${dbname}.employee ('firstname', 'lastname', 'username', 'email', 'password', 'confirm_password') VALUES ( ?, ?, ?, ?, ?, ?)`, [firstname, lastname, username, email, pass, confirm_pass], function (err, rows, fields) {
+    connection.query(`INSERT INTO ${dbname}.employee (firstname, lastname, username, email, password, confirm_password) VALUES ( ?, ?, ?, ?, ?, ?)`, [firstname, lastname, username, email, pass, confirm_pass], function (err, rows, fields) {
         if (err) throw err
         req.flash('registration', 'User registered successfully.');
         res.redirect('/login');

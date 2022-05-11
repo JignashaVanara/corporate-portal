@@ -91,7 +91,11 @@ function deleteAccount() {
 //project filter
 $(function () {
   filterObjects('all');
+  $('#project-flters li').click(function (e) {
+    $(this).addClass('filter-active').siblings().removeClass('filter-active');
+  });
 });
+
 function filterObjects(f) {
   var item, i;
   item = document.getElementsByClassName("project-item");
@@ -129,37 +133,43 @@ function removeClass(element, name) {
 // }
 
 //timesheet entry
+
 function fillTimesheet() {
   const endpoint = `/api/timesheet/addefforts`;
   const day = document.querySelector('#working_day').value;
   const efforts = document.querySelector('#efforts').value;
   const comment = document.querySelector('#timeentry_comment').value;
-  const data = { day: day, efforts: efforts, comment: comment }
 
-  fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      // window.location.href = data.redirect
-      let msg = document.querySelector('.entrymsg');
-      msg.style.display = 'flex';
-      msg.innerHTML = '<p>' + data.message + '</p>';
-      document.querySelector('#working_day').value = '';
-      document.querySelector('#efforts').value = '';
-      document.querySelector('#timeentry_comment').value = ''
+  if (day != '' && efforts != '') {
+    const data = { day: day, efforts: efforts, comment: comment }
+    fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data),
     })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+      .then((res) => res.json())
+      .then((data) => {
+        // window.location.href = data.redirect
+        let msg = document.querySelector('.entrymsg');
+        msg.style.display = 'flex';
+        msg.innerHTML = '<p>' + data.message + '</p>';
+        document.querySelector('#working_day').value = '';
+        document.querySelector('#efforts').value = '';
+        document.querySelector('#timeentry_comment').value = ''
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  } else {
+    document.querySelector('.timeerror').style.display = 'block';
+  }
 }
 
 function logmsg() {
   document.querySelector('.entrymsg').style.display = 'none';
+  document.querySelector('.timeerror').style.display = 'none';
 }
 
 // Goals 
@@ -207,20 +217,31 @@ function add_comments() {
   const goaltype = document.querySelector('#goaltype').value;
   const goalname = document.querySelector('#goalname').value;
   const comment = document.querySelector('#goal-comment').value;
-  const data = { goaltype: goaltype, goalname: goalname, comment: comment }
 
-  fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      window.location.href = data.redirect
+  if (goaltype != '' && goalname != '' && comment != '') {
+    const data = { goaltype: goaltype, goalname: goalname, comment: comment }
+
+    fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data),
     })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+      .then((res) => res.json())
+      .then((data) => {
+        window.location.href = data.redirect
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  } else {
+    document.querySelector('.goalerror').style.display = 'block';
+  }
 }
+
+$(function () {
+  $('#goaltype, #goalname, #goal-comment').focus(function () {
+    $(".goalerror").css('display', 'none');
+  });
+});
