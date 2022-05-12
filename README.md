@@ -24,6 +24,7 @@
     ├── public
     │   ├── css
     │   │   ├── style.css
+    │   ├── files
     │   ├── images
     |   |   ├── svg
     │   ├── js
@@ -31,6 +32,10 @@
     |   |   ├── home.js
     |   |   ├── title.js
     │   ├── favicon.ico
+    ├── screenshots
+    │   ├── desktopView
+    │   ├── responsiveView
+    │   ├── ERD (ER Diagram)
     ├── server
     |   ├── models
     |   │   ├── db.js
@@ -59,6 +64,7 @@
     │   ├── sign-in.html
     │   ├── sign-up.html
     ├── .gitignore
+    ├── Procfile
     ├── app.js
     ├── package-lock.json 
     ├── package.json
