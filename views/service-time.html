@@ -42,7 +42,7 @@
         <label for="efforts">Efforts<sup>*</sup>:</label>
       </div>
       <div class="col-lg-9 col-xs-12">
-        <input type="number" id="efforts" name="efforts" placeholder="Select Hours" min="1" max="8" onfocus="logmsg()" required><br>
+        <input type="text" id="efforts" name="efforts" placeholder="Select Hours" maxlength="1" onkeypress="return event.keyCode > 47 && event.keyCode < 58" onfocus="logmsg()" required><br>
       </div>
     </div>
     <div class="row">
