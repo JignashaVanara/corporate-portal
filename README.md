@@ -123,11 +123,11 @@
 
     Service Docs Page:
         1. This page contains only files.
-        2. Logged in employee can upload pay-slip, resume, compensasion letter, offer letter through this page and file will be displayed in respective block on screen.
+        2. Logged in employee can upload pay-slip, resume, compensation letter, offer letter through this page and file will be displayed in respective block on screen.
 
     Contact Page:
         1. This page contains only information and it's a static page.
-        2. Any user can find contact infromation through this page.
+        2. Any user can find contact information through this page.
 
     Login Page:
         1. on click of login button, system verifies the following validations and after successful login user can access service related screens.
