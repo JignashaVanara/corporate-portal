@@ -13,7 +13,7 @@
 
 
 ## Description
-    Current website is a corporate company portal which is developed using HTML, CSS, JS, Jquery, 
+    Current website is a corporate company portal which is developed using HTML, CSS, JS, JQuery, 
     Bootstrap, Node.js, handlebars and MySQL. 
 
 ## Getting Started
@@ -114,31 +114,31 @@
         You can see "Efforts logged successfully." message highlighted in green on screen.
 
     Service Goals Page:
-        1. Logged in employee can add comments of their work to achive goal for their annual performace.
+        1. Logged in employee can add comments of their work to achieve goal for their annual performance.
         2. Select goal type from dropdown.
         3. Select goal name from dropdown which is filtered according to the goal type.
-        4. Add your work related comments in detail for perticular goal which you selected.
+        4. Add your work related comments in detail for particular goal which you selected.
         5. click on "comment" button.
         6. You can see your comments with your name, selected goal, current date and time on screen, 
 
     Service Docs Page:
         1. This page contains only files.
-        2. Logged in employee can upload payslip, resume, compensasion letter, offer letter through this page and file will be displayed in respective block on screen.
+        2. Logged in employee can upload pay-slip, resume, compensasion letter, offer letter through this page and file will be displayed in respective block on screen.
 
     Contact Page:
         1. This page contains only information and it's a static page.
-        2. Any user can find conact infromation through this page.
+        2. Any user can find contact infromation through this page.
 
     Login Page:
-        1. on click of login button, system verifies the following validations and after successful login user can access serivce related screens.
+        1. on click of login button, system verifies the following validations and after successful login user can access service related screens.
             - username should not be empty.
             - password should not be empty and it should have min length of 8 characters.
         2. on click of sign-up button, user will redirect to register screen.
 
     Registration Page:
         1. on click of login button, system verifies the following validations and after successful registration user will redirect to login screen where user can login in to system to access company services.
-            - Firstname should not be empty.
-            - Lastname should not be empty.
+            - First name should not be empty.
+            - Last name should not be empty.
             - Username should not be empty.
             - Email should not be empty and it should contain @ in address.
             - password should not be empty and it should have min length of 8 characters.
@@ -147,7 +147,7 @@
 
     Edit Profile Page:
         1. User can update profile through this page.
-        2. Correct firstname, lastname or username and click on edit button to make changes.
+        2. Correct first name, last name or username and click on edit button to make changes.
         3. If there is not any data update then click on cancel button you will be redirected to home page.
 
     Delete Account:
@@ -202,8 +202,8 @@
 
         Solution: 
             - Mysql connection errors fire after 60 seconds of inactivity and it will terminate
-              the process as it's a default behaviour in node.js.
-            - Use mysql.createPool() for db connection insead of mysql.createConnection() to solve it.
+              the process as it's a default behavior in node.js.
+            - Use mysql.createPool() for db connection instead of mysql.createConnection() to solve it.
 
 ## Author
 Jignasha Vanara
