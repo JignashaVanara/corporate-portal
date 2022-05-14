@@ -151,7 +151,7 @@
         3. If there is not any data update then click on cancel button you will be redirected to home page.
 
     Delete Account:
-        1. Click on delete account button from navigation user menu and user's all service data with his/her will be deleted from system
+        1. Click on delete account button from navigation user menu and user's all service data with his/her profile will be deleted from system.
         2. User will redirect to login screen on successful deletion of account.
 
     Error Page:
